@@ -1955,7 +1955,8 @@ text-decoration:underline;
 
 /* ------- Página: Página Fechar Pedido ------- */
 body.page-cart {
-background: url("../../../../../apoio/chycme/sites/files/Layout/7 - Finalizar compra.jpg") repeat scroll 0 -80px rgba(0, 0, 0, 0);
+background: url("../../../../../apoio/chycme/sites/files/Layout/7 - Finalizar compra.jpg") repeat scroll 0 -80px #ffffff;
+/*background:#ffffff;*/
 }
 
 body.page-cart #uc-cart-checkout-form {
@@ -1990,7 +1991,130 @@ margin: 5px 0 0 37px;
 }
 
 body.page-cart #uc-cart-checkout-form #cart-pane {
-margin:52px 0 0 0;
+margin: 49px 0 130px 16px;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane legend {
+display: block;
+font-size: 18px;
+font-style: normal;
+font-weight: normal;
+letter-spacing: 0;
+line-height: 1em;
+margin: 0 0 8px;
+word-spacing: 0;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane table {
+border-collapse: collapse;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane table tr {
+border-width:1px 0 0 1px;
+border-style:solid;
+border-color:#cccccc;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane table td span {
+border-width:0 1px 0 0;
+border-style:solid;
+border-color:#cccccc;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane #total-title,
+body.page-cart #uc-cart-checkout-form #cart-pane .total-result {
+border-width:0 1px 1px 0;
+border-style:solid;
+border-color:#cccccc;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane th.products {
+border-width:1px 1px 0 1px;
+float: left;
+height: 33px;
+letter-spacing: 0.1em;
+line-height: 33px;
+padding: 0 10px;
+text-transform: uppercase;
+text-align: left;
+width: 590px;
+background:#ffffff;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane th.price {
+border-color: #CCCCCC;
+border-style: solid;
+border-width: 0 1px;
+float: left;
+height: 33px;
+letter-spacing: 0.1em;
+line-height: 33px;
+padding: 0 10px;
+text-transform: uppercase;
+text-align: left;
+width: 336px;
+background:#ffffff;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane td.products {
+float: left;
+height: 33px;
+letter-spacing: 0.1em;
+line-height: 33px;
+padding: 0 10px 0 25px;
+text-align: left;
+width: 575px;
+background:#ffffff;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane td.products .qtd {
+color:#d4001b;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane td.price {
+border-color: #CCCCCC;
+border-style: solid;
+border-width: 0 1px;
+float: left;
+height: 33px;
+letter-spacing: 0.1em;
+line-height: 33px;
+padding: 0 10px;
+text-transform: uppercase;
+text-align: left;
+width: 336px;
+background:#ffffff;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane td.price span {
+border:none;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane #sub-total-title,
+body.page-cart #uc-cart-checkout-form #cart-pane #entrega,
+body.page-cart #uc-cart-checkout-form #cart-pane #total-title {
+float: left;
+height: 33px;
+letter-spacing: 0.1em;
+line-height: 33px;
+padding: 0 10px 0 10px;
+text-align: left;
+width: 590px;
+background:#ffffff;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane .sub-total-result,
+body.page-cart #uc-cart-checkout-form #cart-pane .entrega-result,
+body.page-cart #uc-cart-checkout-form #cart-pane .total-result {
+float: left;
+height: 33px;
+letter-spacing: 0.1em;
+line-height: 33px;
+padding: 0 10px;
+text-transform: uppercase;
+text-align: left;
+width: 336px;
+background:#ffffff;
 }
 
 /*****************************************************************************************/

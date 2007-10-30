@@ -635,7 +635,7 @@ function theme_cart_review_table($show_subtotal = TRUE) {
       'type' => 'amount',
     );
 	$rows[] = array(
-      'data' => array(array('data' => '<span id="sub-total-title">' . t('SUBTOTAL:') . '</span><span class="sub-total-result>"' . uc_price($subtotal, $context) . '</span>', 'colspan' => 4, 'class' => 'subtotal')),
+      'data' => array(array('data' => '<span id="sub-total-title">' . t('SUBTOTAL:') . '</span><span class="sub-total-result"' . uc_price($subtotal, $context) . '</span>', 'colspan' => 4, 'class' => 'subtotal')),
       'class' => 'total',
     );
 	$rows[] = array(
@@ -643,7 +643,7 @@ function theme_cart_review_table($show_subtotal = TRUE) {
       'class' => 'total',
     );
     $rows[] = array(
-      'data' => array(array('data' => '<span id="total-title">' . t('Total de Pedido:') . '</span><span class="total-result>"' . uc_price($subtotal, $context) . '</span>', 'colspan' => 4, 'class' => 'subtotal')),
+      'data' => array(array('data' => '<span id="total-title">' . t('Total de Pedido:') . '</span><span class="total-result"' . uc_price($subtotal, $context) . '</span>', 'colspan' => 4, 'class' => 'subtotal')),
       'class' => 'total',
     );
   }
