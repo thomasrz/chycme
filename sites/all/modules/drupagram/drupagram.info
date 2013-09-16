@@ -1,0 +1,13 @@
+name = Drupagram
+description = Adds integration with the Instagram photo exchange service.
+core = 6.x
+files[] = drupagram.lib.php
+dependencies[] = oauth_common
+package = drupagram
+
+; Information added by drupal.org packaging script on 2012-10-04
+version = "6.x-1.1"
+core = "6.x"
+project = "drupagram"
+datestamp = "1349365266"
+

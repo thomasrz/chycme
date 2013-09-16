@@ -1,0 +1,8 @@
+<?php
+function create_new_role() {
+  db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
+}
+
+function chycme_form_alter(&$form, &$form_state, $form_id) {
+  print_r($form_id);
+}
