@@ -1,0 +1,94 @@
+Instalação do ambiente local - Apache + PHP + MySQL + Drupal (concluído)
+Configuração inicial Drupal (concluído)
+Criação usuário administrativo (concluído)
+Tela de Acesso ao Painel Administrativo (concluído)
+Busca de layouts (cancelada) Obs: Iremos entrar em contato com um webdev
+
+Programação inicial necessária:
+- Cadastro de Cliente. Início 08 de Julho - Data Prevista Conclusão: 12 de Julho. Status: em andamento
+- Tela de Cadastro de Fornecedor. Início 15 de Julho - Data Prevista Conclusão: 19 de Julho. Status: a fazer.
+- Tela de Cadastro de Produtos (faltou campo para subir a imagem). Início 22 de Julho - Data Prevista Conclusão: 26 de Julho. Status: a fazer.
+- Tela de Permissões / Restrições. Início 29 de Julho - Data Prevista Conclusão: 31 de Julho. Status: a fazer.
+
+Sistema Visão Cliente
+Cadastro de Cliente (Incluir / Alterar / Excluir) - (5 dias)
+- Tela Cadastro de Cliente Pessoa Física
+- Tela Cadastro de Cliente Pessoa Jurídica
+- Mensagens de erro
+- Layout
+- Testes
+
+Home (4 dias)
+- Cadastro do Logo
+- Cadastro dos Menus
+- Banner Rotativo com fotos
+- Layout
+- Testes
+
+Funcionalidade de Acesso ao Painel (3 dias)
+- Validação de usuários
+- Mensagens de erros
+- Autenticação ao sistema
+- Verificação de permissões
+- Menu de cadastro de cliente
+- Layout
+- Testes
+
+
+Tela Principal (3 dias)
+- Logo
+- Visualização dos logos das empresas representadas
+- Descrição do perfil dos produtos
+- Layout
+- Testes
+
+Catálogo (10 dias)
+- Indicador de valores (carrinho)
+- Foto e valor
+- Funcionalidade Adicionar ao carrinho
+- Funcionalidade Quantidade
+- Layout
+- Testes
+
+Página / Overlay - Detalhes do Produto (2 dias)
+- Detalhes do produto (Foto maior, outras fotos, descrição do produto)
+- Layout
+- Testes
+
+Relatório Final (3 dias)
+- Relação com descrição dos produtos, valores e quantidade por peça
+- Valor total do pedido
+- Lista dos logos das empresas representadas
+- Botão Pagar pedido
+- Layout
+- Testes
+
+Tela de Pagamento (12 dias)
+- Logo
+- Menu (Boleto / Transferência / Cheques) 
+- Formulário - Boleto
+- Formulário - Tranferência
+- Formulário - Cheques
+- Layout
+- Testes
+
+Consolidação (2 dias)
+- Tela com a conclusão do pedido
+- Layout
+- Testes
+
+
+Sistema interno
+Pedidos - Relatório de pedidos consolidados (4 dias)
+Cliente - Relatório de clientes (2 dias)
+Cliente - Histórico de clientes (CRM) (?)
+Produtos - Cadastro de produtos (acima) 
+Representada - Cadastro de representada (?)
+
+Qual é a diferença entre:
+- Fornecedor - Empresa - Representada
+- Cliente
+
+- Informar quais cammpos são obrigatórios
+- Faltou os campos para o usuário digitar a senha 
+- Informar quais serão as mensagens de erro

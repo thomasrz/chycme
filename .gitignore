@@ -3,12 +3,8 @@
 
 # Ignore paths that contain generated content.
 cache/
-files/
-sites/*/files
-sites/*/private
 
 # Ignore default text files
-.htaccess
 robots.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
