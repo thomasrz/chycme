@@ -7,3 +7,18 @@
 		width:980px;
 		overflow:hidden; 
 		}
+
+	.view-id-representadas .view-content .item-list ul {
+	  width: 680px;
+	}
+	
+	.view-id-representadas .view-content .item-list ul li {
+	  margin: 0 0;
+	  width: 980px;
+	  height: 300px;
+	}
+	
+	.views-field-field-logomarca-fid {
+	  width: 240px;
+	  height: 300px;
+	}

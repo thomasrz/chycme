@@ -11,6 +11,7 @@ stylesheets[all][] = css/screen.css
 stylesheets[print][] = print.css
 
 scripts[] = js/easySlider1.7.js
+;scripts[] = js/jcarousellite_1.0.1.min.js
 scripts[] = js/slider.js
 scripts[] = js/product.js
 
