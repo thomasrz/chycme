@@ -13,7 +13,7 @@
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
   </head>
-  <body <?php print phptemplate_body_class($left, $right); ?>>
+  <body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?>">
 <!-- Layout -->
 	<div id="header-wrap" class="outerbox" >
 		<header id="header" class="outerbox clearfix">

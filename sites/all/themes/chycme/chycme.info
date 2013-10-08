@@ -1,19 +1,14 @@
 ﻿name = Chycme
-description = Tableless, recolorable, multi-column, fluid width theme (default).
+description = Template Chycme
 version = VERSION
 core = 6.x
 engine = phptemplate
-stylesheets[all][] = style_chycme.css
-stylesheets[all][] = flexslider.css
-stylesheets[all][] = awesome_fonts.css
-stylesheets[all][] = responsive.css
-stylesheets[all][] = css/screen.css
-stylesheets[print][] = print.css
+stylesheets[all][] = css/style_chycme.css
+stylesheets[all][] = css/flexslider.css
 
 scripts[] = js/easySlider1.7.js
-;scripts[] = js/jcarousellite_1.0.1.min.js
-scripts[] = js/slider.js
-scripts[] = js/product.js
+scripts[] = js/selectivizr-min.js
+scripts[] = js/script.js
 
 regions[header] = Cabeçalho
 regions[content_home] = Conteúdo Home
@@ -23,9 +18,3 @@ regions[sidebar_right] = Conteúdo Direito
 regions[footer_left] = Rodapé Esquerdo
 regions[footer_center] = Rodapé Central
 regions[footer_right] = Rodapé Direito
-
-; Information added by drupal.org packaging script on 2013-01-16
-version = "6.28"
-project = "drupal"
-datestamp = "1358370963"
-

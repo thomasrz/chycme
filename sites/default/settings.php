@@ -88,7 +88,7 @@
  *   $db_url = 'mysqli://username:password@localhost/databasename';
  *   $db_url = 'pgsql://username:password@localhost/databasename';
  */
-$db_url = 'mysql://chycme:chycme@localhost/chycme';
+$db_url = 'mysqli://root@localhost/chycme';
 $db_prefix = '';
 
 /**
@@ -256,3 +256,5 @@ ini_set('url_rewriter.tags',        '');
 #   'forum'      => 'Discussion board',
 #   '@count min' => '@count minutes',
 # );
+
+error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
