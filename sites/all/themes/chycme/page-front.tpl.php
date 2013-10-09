@@ -6,62 +6,41 @@
     <?php print $head ?>
     <title><?php print $head_title ?></title>
     <?php print $styles ?>
-	<link rel='stylesheet' id='wpex-droid-serif-css'  href='http://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic&#038;ver=1' type='text/css' media='all' />
-    <link rel='stylesheet' id='wpex-open-sans-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C600italic%2C700italic%2C400%2C300%2C600%2C700&#038;subset=latin%2Ccyrillic-ext%2Ccyrillic%2Cgreek-ext%2Cgreek%2Cvietnamese%2Clatin-ext&#038;ver=1' type='text/css' media='all' />
     <?php print $scripts ?>
-    <!--[if lt IE 7]>
-      <?php print phptemplate_get_ie_styles(); ?>
-    <![endif]-->
   </head>
   <body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?>">
-<!-- Layout -->
-	<div id="header-wrap" class="outerbox" >
-		<header id="header" class="outerbox clearfix">
-			<div id="header-top" class="outerbox">
-			  <div id="logo" class="clearfix">
-				<?php
-				  // Prepare header
-				  $site_fields = array();
-				  if ($site_name) {
-					$site_fields[] = check_plain($site_name);
-				  }
-				  if ($site_slogan) {
-					$site_fields[] = check_plain($site_slogan);
-				  }
-				  $site_title = implode(' ', $site_fields);
-				  if ($site_fields) {
-					$site_fields[0] = '<span>'. $site_fields[0] .'</span>';
-				  }
-				  $site_html = implode(' ', $site_fields);
-				?>  
+  
+	<div id="header-wrap">
+		<header id="header">
+			<div id="header-top">
+				<div id="logo">
+					<?php
+					  // Prepare header
+					  $site_fields = array();
+					  if ($site_name) {
+						$site_fields[] = check_plain($site_name);
+					  }
+					  if ($site_slogan) {
+						$site_fields[] = check_plain($site_slogan);
+					  }
+					  $site_title = implode(' ', $site_fields);
+					  if ($site_fields) {
+						$site_fields[0] = '<span>'. $site_fields[0] .'</span>';
+					  }
+					  $site_html = implode(' ', $site_fields);
+					?>  
 					<a href="<?php print check_url($front_page);?>" title="<?php print $site_title; ?>">
 					  <img src="<?php print check_url($logo); ?>" alt="<?php print $site_title;?>" />
 					</a>
-			  </div>
-			  <div id="header-region" class="clear-block"><?php print $header; ?></div>
+				</div>
+				<div id="header-region" class="clear-block"><?php print $header; ?></div>
 			</div>
 		</header>
 	</div>
-    <div id="wrapper">
-      <div id="container" class="outerbox clear-block">
-        <div id="div-header">
-          <?php if (isset($primary_links)) : ?>
-            <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
-          <?php endif; ?>
-          <?php if (isset($secondary_links)) : ?>
-            <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
-          <?php endif; ?>
-        </div> <!-- /header -->
-        <?php if ($left): ?>
-          <div id="sidebar-left" class="sidebar">
-            <?php if ($search_box): ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
-            <?php print $left ?>
-          </div>
-        <?php endif; ?>
-        <div id="center">
-	      <div id="squeeze">
-	  	    <div class="right-corner">
-			  <div class="left-corner">
+	
+	<div id="wrapper">
+		<div id="container">
+			<div class="featured">
 				<?php print $breadcrumb; ?>
 				<?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
 				<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
@@ -74,81 +53,72 @@
 				<div id="footer">
 				  <?php print $footer_message . $footer ?>
 				</div>
-              </div>
-	        </div>
-	      </div> 
-	    </div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->
-      <?php if ($right): ?>
-        <div id="sidebar-right" class="sidebar">
-          <?php if (!$left && $search_box): ?><div class="block block-theme"><?php print $search_box ?></div><?php endif; ?>
-          <?php print $right ?>
-        </div>
-      <?php endif; ?>
-        <div id="wrap">
-		  <div id="main-content" class="outerbox clearfix fitvids">
-			<div id="slider">
-			  <ul>
-			  <?php foreach ($node->field_banners as $banner) { 
-				if (isset($banner['view']) && $banner['view']) {
-			  ?>
-				<li><?php print $banner['view']; ?></li>
-			  <?php } 
-			  } ?>
-			  </ul>
 			</div>
-			<div class='home-content'>
-			  <?php print $content_home; ?>
-			</div>
-			<div class='bt-todos-produtos'><a href='<?php print url('produtos/4');?>'><img src="<?php print url('sites/all/themes/chycme/bt_produtos.png');?>"></img></a></div>
-		  </div>
-		</div>
-      </div> <!-- /container -->
-    </div> <!-- /wrapper -->
-<!-- /layout -->
-    <div id="footer-wrap" >
-		<footer id="footer" class="outerbox">  
-			<div id="footer-widgets" class="outerbox">
-				<div class="footer-box footer-left">
-				   <div class="logoFooter">
-					 <div id="logo" class="clearfix">
-					  <a href="<?php print check_url($front_page);?>" title="<?php print $site_title; ?>">
-						<img src="<?php print check_url($logo); ?>" alt="<?php print $site_title;?>" />
-					  </a>
-					 </div><!-- /logo -->
+			<div id="wrap">
+			  <div id="main-content">
+				<div class="wrap-slider">
+					<div id="slider">
+					  <ul>
+					  <?php foreach ($node->field_banners as $banner) { 
+						if (isset($banner['view']) && $banner['view']) {
+					  ?>
+						<li><?php print $banner['view']; ?></li>
+					  <?php } 
+					  } ?>
+					  </ul>
 					</div>
-					<div class="footer-widget widget_nav_menu clearfix">
-					  <?php print $footer_left; ?>
-					  <ul id="header-social">
-						<li><a href="https://www.facebook.com/camilla.chycme?fref=ts" title="facebook" target="_blank" class="wpex-tooltip"><img src="<?php print url('sites/all/themes/chycme/images/facebook.png');?>" alt="facebook" /></a></li>
-						<li><a href="http://instagram.com/chycme" title="support" target="_blank" class="wpex-tooltip"><img src="<?php print url('sites/all/themes/chycme/images/support.png'); ?>" alt="support" /></a></li>
-					  </ul><!-- /header-social -->
+				</div>
+				<div class='home-content'>
+				  <?php print $content_home; ?>
+				</div>
+				<div class='bt-todos-produtos'><a href='<?php print url('produtos/4');?>'><img src="<?php print url('sites/all/themes/chycme/bt_produtos.png');?>"></img></a></div>
+			  </div>
+			  <div class="clearBoth"></div>
+			</div>
+		</div>
+		<div class="clearBoth"></div>
+    </div>
+
+    <div id="footer-wrap">
+		<footer id="footer">  
+			<div id="footer-widgets">
+				<div class="footer-box footer-left">
+					<div class="logoFooter">
+						<div id="logo">
+							<a href="<?php print check_url($front_page);?>" title="<?php print $site_title; ?>">
+								<img src="<?php print check_url($logo); ?>" alt="<?php print $site_title;?>" />
+							</a>
+						</div>
+					</div>
+					<div class="footer-widget widget_nav_menu">
+						<?php print $footer_left; ?>
+						<ul id="header-social">
+							<li><a href="https://www.facebook.com/camilla.chycme?fref=ts" title="facebook" target="_blank" class="wpex-tooltip"><img src="<?php print url('sites/all/themes/chycme/images/facebook.png');?>" alt="facebook" /></a></li>
+							<li><a href="http://instagram.com/chycme" title="support" target="_blank" class="wpex-tooltip"><img src="<?php print url('sites/all/themes/chycme/images/support.png'); ?>" alt="support" /></a></li>
+						</ul>
 					</div>
 				</div> 
-				<!-- /footer-one -->
 				<div class="footer-box footer-center">
 					<div class="footer-widget widget_text clearfix">
-					  <?php print $footer_center; ?>
+						<?php print $footer_center; ?>
 					</div>            
 				</div>
-				<!-- /footer-two -->
-			   <div class="footer-box footer-right remove-margin">
-				 <div class="footer-widget widget_text clearfix">
-					  <?php print $footer_right; ?>
-				 </div>
-			   </div>
-			   <!-- /footer-three -->
+				<div class="footer-box footer-right remove-margin">
+					<div class="footer-widget widget_text clearfix">
+						<?php print $footer_right; ?>
+					</div>
+				</div>
 			</div>
-			<!-- /footer-widgets -->
 		</footer>
-      <!-- /footer -->
-      <div id="footer-bottom">
-    	<div class="outerbox clearfix">
-            <div id="copyright">
-                Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
-            </div><!-- /copyright -->
-        </div><!-- /outerbox -->
-	  </div><!-- /footer-bottom -->        
-    </div><!-- /footer-wrap -->
-  <?php print $closure ?>
+		<div id="footer-bottom">
+			<div class="outerbox clearfix">
+				<div id="copyright">
+					Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	<?php print $closure ?>
   </body>
 </html>

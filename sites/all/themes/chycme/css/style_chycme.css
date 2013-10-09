@@ -7,6 +7,7 @@ body {
 /*background:url(images/mainbg.png) repeat scroll 0 0 #DDD;*/
 background:url("../../../../../apoio/guia-home.jpg");
 font:13px/1.7 Arial,Helvetica,sans-serif;
+height: 1724px;
 }
 
 .messages.error {
@@ -100,7 +101,7 @@ background: url("../images/sprite.png") 0 -126px;
 #header-wrap #block-menu-menu-principal {
 float: left;
 height: 77px;
-margin: 0 0 0 205px;
+margin: 0 0 0 221px;
 width: 728px;
 }
 
@@ -119,18 +120,24 @@ list-style:none;
 }
 
 #header-wrap #block-menu-menu-principal .menu li a {
+background: url("../images/bg-border-menu-principal.jpg") no-repeat left 2px;
 color: #666666;
 display: block;
 font-family: "Arial";
 font-size: 12px;
 font-style: normal;
 font-weight: normal;
-height: 76px;
+height: 73px;
 letter-spacing: -0.2px;
-line-height: 76px;
+line-height: 73px;
 padding: 0 27px;
 text-decoration: none;
 word-spacing: 0;
+}
+
+#header-wrap #block-menu-menu-principal .menu li a.linkActive,
+#header-wrap #block-menu-menu-principal .menu li a:hover {
+color:#9c3082;
 }
 
 #header-wrap #block-menu-menu-principal .menu li:nth-child(2) a {
@@ -151,15 +158,54 @@ display:none;
 }
 
 #header-wrap #block-uc_ajax_cart-0 {
-	display: block;
-    float: left;
-    width: 100px;
+background: url("../images/border-carrinho.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
+cursor: pointer;
+display: block;
+float: left;
+height: 73px;
+width: 100px;
 }
 
-#wrapper #center {
+#header-wrap #block-uc_ajax_cart-0 > h2 {
+color:#a92179;
+font-family: "Arial";
+font-size: 11.5px;
+font-style: normal;
+font-weight: normal;
+letter-spacing: 0;
+padding: 29px 0 0;
+text-indent: 22px;
+word-spacing: 0;
+}
+
+
+
+/*****************************************************************************************/
+/***** WRAPPER *****/
+/*****************************************************************************************/
+#wrapper .featured {
 display:none;
 }
 
+#wrapper #wrap {
+height: 513px;
+position: relative;
+}
+
+#wrapper #wrap #main-content .wrap-slider {
+left: 50%;
+margin-left: -631px;
+position: absolute;
+top: 0;
+}
+
+.home-content {
+height:200px;
+}
+
+.clearBoth {
+clear:both;
+}
 
 /*****************************************************************************************/
 /***** FOOTER *****/
