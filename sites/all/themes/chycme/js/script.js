@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
-	$("#slider").easySlider({
+	$("#slider").easySlider(/*{
 		auto: true, 
 		continuous: true,
 		nextId: "slider1next",
 		prevId: "slider1prev"
-	}); 
+	}*/);
 
+	//Carrousel de Produtos - Home
 	$(".view-id-representadas .view-content .item-list").easySlider({
 		auto: false, 
 		continuous: false

@@ -61,48 +61,37 @@
 						<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php print $help; ?>
-						<div class="clear-block">
+						<div class="center-content">
 							<?php print $content_home; ?>
-							<div class='bt-todos-produtos'><a href='<?php print url('produtos/4');?>'><img src="<?php print url('sites/all/themes/chycme/bt_produtos.png');?>"></img></a></div>
+							<div class='bt-todos-produtos'>
+								<a href='<?php print url('produtos/4');?>'>
+									<img src="<?php print url('sites/all/themes/chycme/bt_produtos.png');?>"></img>
+								</a>
+							</div>
 						</div>
 						<?php print $feed_icons ?>
-						<div id="footer">
-							<?php print $footer_message . $footer ?>
-						</div>
 					</div>
 				</div>
 			</div>
-			<footer id="footer-wrap">
-				<div class="footer container-box">
+			<footer class="footer-wrap">
+				<div class="footer">
 					<div class="footer-box footer-left">
-						<div id="logo" class="clearfix">
+						<div id="logo">
 							<a href="<?php print check_url($front_page);?>" title="<?php print $site_title; ?>">
 								<img src="<?php print check_url($logo); ?>" alt="<?php print $site_title;?>" />
 							</a>
 						</div>
-						<div class="footer-widget widget_nav_menu clearfix">
-							<?php print $footer_left; ?>
-							<ul id="header-social">
-								<li><a href="https://www.facebook.com/camilla.chycme?fref=ts" title="facebook" target="_blank" class="wpex-tooltip"><img src="<?php print url('sites/all/themes/chycme/images/facebook.png');?>" alt="facebook" /></a></li>
-								<li><a href="http://instagram.com/chycme" title="support" target="_blank" class="wpex-tooltip"><img src="<?php print url('sites/all/themes/chycme/images/support.png'); ?>" alt="support" /></a></li>
-							</ul>
-						</div>
+						<?php print $footer_left; ?>
 					</div>
 					<div class="footer-box footer-center">
-						<div class="footer-widget widget_text clearfix">
-						  <?php print $footer_center; ?>
-						</div>            
+						<?php print $footer_center; ?>        
 					</div>
 					<div class="footer-box footer-right remove-margin">
-						<div class="footer-widget widget_text clearfix">
-							<?php print $footer_right; ?>
-						</div>
+						<?php print $footer_right; ?>
 					</div>
-					<div id="footer-bottom">
-						<div class="outerbox clearfix">
-							<div id="copyright">
-								Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
-							</div>
+					<div class="footer-bottom">
+						<div class="copyright">
+							Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
 						</div>
 					</div>
 				</div>
