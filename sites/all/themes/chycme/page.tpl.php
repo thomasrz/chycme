@@ -5,6 +5,10 @@
 	<head>
 		<?php print $head ?>
 		<title><?php print $head_title ?></title>
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="<?php print base_path( )?><?php print path_to_theme() ?>/js/html5.js"></script>
+			<script type="text/javascript" src="<?php print base_path( )?><?php print path_to_theme() ?>/js/PIE.js"></script>
+		<![endif]-->
 		<?php print $styles ?>
 		<?php print $scripts ?>
 	</head>
@@ -57,8 +61,8 @@
 					</div>
 				</div>
 			</div>
-			<footer id="footer-wrap">
-				<div class="footer">
+			<div class="footer-wrap">
+				<footer class="footer">
 					<div class="footer-box footer-left">
 						<div id="logo">
 							<a href="<?php print check_url($front_page);?>" title="<?php print $site_title; ?>">
@@ -73,13 +77,13 @@
 					<div class="footer-box footer-right remove-margin">
 						<?php print $footer_right; ?>
 					</div>
-					<div id="footer-bottom">
-						<div id="copyright">
+					<div class="footer-bottom">
+						<div class="copyright">
 							Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
 						</div>
 					</div>
-				</div>
-			</footer>
+				</footer>
+			</div>
 		</div>
 		<div class="overlay" id="overlay" style="display:none;"></div>
 		<?php print $closure ?>

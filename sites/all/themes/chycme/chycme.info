@@ -4,7 +4,6 @@ version = VERSION
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style_chycme.css
-stylesheets[all][] = css/flexslider.css
 
 scripts[] = js/easySlider1.7.js
 scripts[] = js/selectivizr-min.js

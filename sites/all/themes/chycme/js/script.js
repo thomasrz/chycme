@@ -6,6 +6,12 @@ $(document).ready(function(){
 		nextId: "slider1next",
 		prevId: "slider1prev"
 	}*/);
+	
+		if (window.PIE) {
+			$('.header-wrap #block-search-0 #edit-search-block-form-1').each(function() {
+				PIE.attach(this);
+			});
+		}
 
 	//Carrousel de Produtos - Home
 	$(".view-id-representadas .view-content .item-list").easySlider({
