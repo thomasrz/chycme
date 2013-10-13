@@ -368,23 +368,21 @@ width: 40px;
 /*****************************************************************************************/
 /***** WRAPPER *****/
 /*****************************************************************************************/
-.content-wrap {
-background: url("../../../../../apoio/guia-home.jpg") no-repeat scroll 0 -624px rgba(0, 0, 0, 0);
-}
-
 .content-wrap #center > h2 {
 display:none;
 }
 
 .content-wrap .content {
-height: 513px;
+clear: both;
 position: relative;
 }
 
+/* ------- Página: Home ------- */
 /* REPRESENTANDO */
 .content-wrap #block-views-representadas-block_1 h2 {
-background: url("../images/sprite.png") no-repeat scroll 780px -403px rgba(0, 0, 0, 0);
+background: url("../images/sprite.png") no-repeat 780px -403px;
 border-bottom: 2px solid #990000;
+color: #666666;
 display: block;
 float: left;
 font-family: "Arial";
@@ -401,7 +399,7 @@ word-spacing: 0;
 }
 
 .content-wrap #block-views-representadas-block_1 h2:before {
-border-bottom: 2px solid #F5F5F5;
+border-bottom: 2px solid #CCCCCC;
 content: "";
 display: block;
 float: left;
@@ -409,30 +407,71 @@ height: 43px;
 width: 779px;
 }
 
-
-
-
-
-
-/*.content-wrap .content #main-content .wrap-slider {
-left: 50%;
-margin-left: -631px;
-position: absolute;
-top: 0;
+.content-wrap .representadas-home {
+margin: 0 0 0 32px;
+overflow: hidden;
+width: 1020px;
 }
 
-.home-content {
-height:200px;
+html .content-wrap .representadas-home .item-list {
+clear: both;
+height: 100% !important;
 }
 
-.clearBoth {
-clear:both;
-}*/
+.content-wrap .representadas-home .item-list ul,
+.content-wrap .representadas-home .item-list li {
+list-style: none outside none;
+margin: 0;
+padding: 0;
+}
 
-.bt-todos-produtos a {
-background: none repeat scroll 0 0 #9C3082;
-border-radius: 10px 10px 10px 10px;
+.content-wrap .representadas-home .item-list ul {
+height: 335px;
+padding: 0 5px;
+}
+
+.content-wrap .representadas-home .item-list li {
+background: #FFFFFF;
+border-radius: 7px;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+box-shadow: 0 0 2px #888888;
+-moz-box-shadow: 0 0 2px #888888;
+-webkit-box-shadow: 0 0 2px #888888;
+height: 323px;
+margin: 3px 20px 0 0;
+overflow: hidden;
+}
+
+.content-wrap .representadas-home .product-image {
+clear: none;
+float: none;
+margin: 0;
+padding: 0;
+text-align: inherit;
+}
+
+.content-wrap .representadas-home .product-image img {
+width:240px;
+height:240px;
+}
+
+.content-wrap .representadas-home .product-title {
+padding: 11px 0 0 16px;
+}
+
+.content-wrap .representadas-home .product-price {
+padding: 7px 0 0 16px;
+}
+
+.content-wrap .bt-todos-produtos a {
+background: #9C3082;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
 box-shadow: -1px 2px 2px #555555;
+-moz-box-shadow: -1px 2px 2px #555555;
+-webkit-box-shadow: -1px 2px 2px #555555;
 color: #FFFFFF;
 display: block;
 font-family: "Arial";
@@ -442,7 +481,7 @@ font-weight: normal;
 height: 80px;
 letter-spacing: -1px;
 line-height: 80px;
-margin: 8px 0 0 4px;
+margin: 8px auto 0;
 text-align: center;
 text-decoration: none;
 width: 384px;
