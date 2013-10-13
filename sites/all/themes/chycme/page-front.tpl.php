@@ -7,7 +7,6 @@
 		<title><?php print $head_title ?></title>
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="<?php print base_path( )?><?php print path_to_theme() ?>/js/html5.js"></script>
-			<script type="text/javascript" src="<?php print base_path( )?><?php print path_to_theme() ?>/js/PIE.js"></script>
 		<![endif]-->
 		<?php print $styles ?>
 		<?php print $scripts ?>
@@ -68,9 +67,7 @@
 						<div class="center-content">
 							<?php print $content_home; ?>
 							<div class='bt-todos-produtos'>
-								<a href='<?php print url('produtos/4');?>'>
-									<img src="<?php print url('sites/all/themes/chycme/bt_produtos.png');?>"></img>
-								</a>
+								<a href='<?php print url('produtos/4');?>' title="Clique e veja todos os produtos">Clique e veja todos os produtos</a>
 							</div>
 						</div>
 						<?php print $feed_icons ?>

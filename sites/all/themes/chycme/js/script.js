@@ -1,17 +1,9 @@
 $(document).ready(function(){
 
-	$("#slider").easySlider(/*{
+	$("#slider").easySlider({
 		auto: true, 
-		continuous: true,
-		nextId: "slider1next",
-		prevId: "slider1prev"
-	}*/);
-	
-		if (window.PIE) {
-			$('.header-wrap #block-search-0 #edit-search-block-form-1').each(function() {
-				PIE.attach(this);
-			});
-		}
+		continuous: true
+	});
 
 	//Carrousel de Produtos - Home
 	$(".view-id-representadas .view-content .item-list").easySlider({
