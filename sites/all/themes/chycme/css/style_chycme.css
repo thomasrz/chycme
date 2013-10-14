@@ -443,25 +443,53 @@ margin: 3px 20px 0 0;
 overflow: hidden;
 }
 
+.content-wrap .representadas-home .item-list li a {
+color: #888888;
+text-decoration: none;
+}
+
 .content-wrap .representadas-home .product-image {
 clear: none;
 float: none;
+height: 240px;
 margin: 0;
+overflow: hidden;
 padding: 0;
 text-align: inherit;
+width: 240px;
 }
 
 .content-wrap .representadas-home .product-image img {
-width:240px;
 height:240px;
 }
 
 .content-wrap .representadas-home .product-title {
-padding: 11px 0 0 16px;
+font-family: "Arial";
+font-size: 13px;
+font-style: normal;
+font-weight: normal;
+letter-spacing: 0;
+line-height: 16px;
+max-height: 32px;
+min-height: 16px;
+overflow: hidden;
+padding: 11px 16px 0;
+width: 208px;
+word-spacing: 0;
 }
 
 .content-wrap .representadas-home .product-price {
-padding: 7px 0 0 16px;
+font-family: "Arial";
+font-size: 13px;
+font-style: normal;
+font-weight: normal;
+height: 16px;
+letter-spacing: 0;
+line-height: 16px;
+overflow: hidden;
+padding: 11px 16px 0;
+width: 208px;
+word-spacing: 0;
 }
 
 .content-wrap .bt-todos-produtos a {
