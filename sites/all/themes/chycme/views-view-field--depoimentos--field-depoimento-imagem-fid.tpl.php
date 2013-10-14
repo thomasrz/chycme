@@ -23,6 +23,6 @@
 /*print '<pre>';
 print_r($row->node_data_field_depoimento_imagem_field_depoimento_imagem_data);
 print '</pre>'; */
-print "<img width='30px' height='30px' src='". $output ."'></img>";
+print "<img width='45px' height='45px' src='". $output ."'></img>";
 //print $output; 
 ?>

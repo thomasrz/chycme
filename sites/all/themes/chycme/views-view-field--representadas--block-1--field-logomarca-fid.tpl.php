@@ -19,18 +19,18 @@
   * the view is modified.
   */
 ?>
-<a href="<?php print url('user');?>"><div class="representada-<?php print $row->nid; ?>">
-<?php 
-$query = db_query("SELECT nid FROM {content_type_product} WHERE field_produto_representada_nid = '". $row->nid ."' LIMIT 4");
-while ($produtos = db_fetch_array($query)) {
-  $product_node = node_load($produtos['nid']);
-  ?>
-  <div class="product-<?php print $product_node->nid; ?>">
-    <div class='product-image'><img src="<?php print url($product_node->field_image_cache[0]['filepath']); ?>"></img></div>
-    <div class='product-title'><?php print $product_node->title; ?></div>
-	<div class='product-price'><?php print uc_price($product_node->sell_price); ?></div>
-  </div>
-  <?php
-}
+
+<?php
+	$query = db_query("SELECT nid FROM {content_type_product} WHERE field_produto_representada_nid = '". $row->nid ."' LIMIT 4");
+	while ($produtos = db_fetch_array($query)) {
+		$product_node = node_load($produtos['nid']);
+	}
 ?>
-</div></a>
+
+<a href="<?php $product_node->nid; ?>" class="representada-<?php print $row->nid; ?>">
+	<div class="product-<?php print $product_node->nid; ?>">
+		<div class='product-image'><img src="<?php print url($product_node->field_image_cache[0]['filepath']); ?>"></img></div>
+		<div class='product-title'><?php print $product_node->title; ?></div>
+		<div class='product-price'><?php print uc_price($product_node->sell_price); ?></div>
+	</div>
+</a>

@@ -24,4 +24,4 @@
 $image = unserialize($row->drupagram_images);
 $image_url = $image['thumbnail']['url'];
  ?>
-<a href="<?php print $row->drupagram_link; ?>" target="_blank"><img src="<?php print $image_url; ?>" width="75px"></img></a>
+<a href="<?php print $row->drupagram_link; ?>" target="_blank"><img src="<?php print $image_url; ?>" width="61px" height="61px"></img></a>
