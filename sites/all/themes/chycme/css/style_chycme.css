@@ -517,13 +517,13 @@ word-spacing: -1px;
 }
 
 /* ------- Página: Login ------- */
-body.page-user .content-wrap #center .clear-block {
+body.page-user .content-wrap #center .content #user-login {
 margin: 20px auto;
 padding: 0 0 0 100px;
 width: 950px;
 }
 
-body.page-user .content-wrap #center > h2 {
+body.page-user .content-wrap #center .content > h2 {
 border-bottom: 2px solid #990000;
 color: #666666;
 display: block;
@@ -541,7 +541,7 @@ width: 1000px;
 word-spacing: 0;
 }
 
-body.page-user .content-wrap #center > h2:after {
+body.page-user .content-wrap #center .content > h2:after {
 border-bottom: 2px solid #CCCCCC;
 content: "";
 display: block;
