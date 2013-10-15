@@ -27,7 +27,7 @@
 	}
 ?>
 
-<a href="<?php $product_node->nid; ?>" class="representada-<?php print $row->nid; ?>">
+<a href="node/<?php print $product_node->nid; ?>" class="representada-<?php print $row->nid; ?>">
 	<div class="product-<?php print $product_node->nid; ?>">
 		<div class='product-image'><img src="<?php print url($product_node->field_image_cache[0]['filepath']); ?>"></img></div>
 		<div class='product-title'><?php print $product_node->title; ?></div>

@@ -11,7 +11,8 @@
 		<?php print $styles ?>
 		<?php print $scripts ?>
 	</head>
-	<body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?> page-node-id-<?php print $node->nid; ?>">
+	
+	<body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?>">
 		<div class="container-wrap">
 			<div class="header-wrap">
 				<header class="header container-box" class="outerbox clearfix">
@@ -22,6 +23,9 @@
 					</div>
 					<?php print $header; ?>
 				</header>
+			</div>
+			<div class="banner-wrap">
+				<div id="banner"></div>
 			</div>
 			<div class="content-wrap">
 				<div class="content container-box">
@@ -45,15 +49,8 @@
 					<?php endif; ?>
 
 					<div id="center">
-						<?php print $breadcrumb; ?>
-						<?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
-						<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-						<?php if ($title && arg(0) != 'produtos'): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
-						<?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
-						<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
-						<?php if ($show_messages && $messages): print $messages; endif; ?>
-						<?php print $help; ?>
-						<div class="clear-block">
+						<div class="content container-box">
+							<h2><?php print $title; ?></h2>
 							<?php print $content ?>
 						</div>
 						<?php print $feed_icons ?>

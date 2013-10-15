@@ -6,7 +6,7 @@ $(document).ready(function(){
 	});
 
 	//Carrousel de Produtos - Home
-	$(".view-id-representadas .view-content .item-list").easySlider({
+	$("html .content-wrap .representadas-home .item-list").easySlider({
 		auto: false, 
 		continuous: false
 	});
