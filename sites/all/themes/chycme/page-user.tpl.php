@@ -49,8 +49,17 @@
 					<?php endif; ?>
 
 					<div id="center">
-						<div class="content container-box">
-							<h2><?php print $title; ?></h2>
+						<div class="beforeTitle"></div>
+						<?php print '<h2>'. $title .'</h2>'; ?>
+						<div class="afterTitle"></div>
+					
+						<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block"><ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
+						<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
+						
+						<?php if ($show_messages && $messages): print $messages; endif; ?>
+						<?php print $help; ?>
+						
+						<div class="clear-block">
 							<?php print $content ?>
 						</div>
 						<?php print $feed_icons ?>

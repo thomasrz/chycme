@@ -8,7 +8,13 @@ $(document).ready(function(){
 	//Carrousel de Produtos - Home
 	$("html .content-wrap .representadas-home .item-list").easySlider({
 		auto: false, 
-		continuous: false
+		continuous: false,
+		prevId: 'prevBtnProd',
+		nextId: 'nextBtnProd'
+	});
+	
+	$("body.page-user .content-wrap #center #user-register input.form-text").each(function(index, value){
+		$(this).val($(this).parent().find("label").text().split(": *")[0]);
 	});
 
 	$('.activator').click(function(){
