@@ -52,7 +52,7 @@
 					<?php if ($sidebar_left): ?>
 						<div id="sidebar-left" class="sidebar">
 							<?php print $sidebar_left; ?>
-						</div><!-- sidebar-left -->
+						</div>
 					<?php endif; ?>
 
 					<div id="center">

@@ -22,7 +22,7 @@ $(document).ready(function(){
 		product_id = product_id.replace(/\//g,"-"); //regex to replace / to -
 		$('#overlay').fadeIn('fast',function(){
 			$('.product-box-'+product_id).show();
-			$('.product-box-'+product_id).animate({'top':'160px'},500);
+			$('.product-box-'+product_id).animate({'top':'20px'},500);
 		});
 		return false;
 	});
