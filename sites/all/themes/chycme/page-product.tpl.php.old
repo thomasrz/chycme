@@ -11,7 +11,7 @@
 		<?php print $styles ?>
 		<?php print $scripts ?>
 	</head>
-	<body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?>">
+	<body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?> page-node-id-<?php print $node->nid; ?>">
 		<div class="container-wrap">
 			<div class="header-wrap">
 				<header class="header container-box" class="outerbox clearfix">
@@ -22,17 +22,6 @@
 					</div>
 					<?php print $header; ?>
 				</header>
-			</div>
-			<div class="slider-wrap">
-				<div id="slider">
-					<ul>
-						<?php foreach ($node->field_banners as $banner) { 
-							if (isset($banner['view']) && $banner['view']) {
-						?>
-						<li><?php print $banner['view']; ?></li>
-						<?php } } ?>
-					</ul>
-				</div>
 			</div>
 			<div class="content-wrap">
 				<div class="content container-box">
@@ -59,16 +48,13 @@
 						<?php print $breadcrumb; ?>
 						<?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
 						<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-						<?php if ($title && arg(0) != 'produtos'): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
+						<?php if ($title && arg(0) != 'produtos'): print '<div class="beforeTitle"></div><h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2><div class="afterTitle"></div>'; endif; ?>
 						<?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
 						<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php print $help; ?>
-						<div class="center-content">
-							<?php print $content_home; ?>
-							<div class='bt-todos-produtos'>
-								<a href='<?php print url('produtos/4');?>' title="Clique e veja todos os produtos">Clique e veja todos os produtos</a>
-							</div>
+						<div class="clear-block">
+							<?php print $content ?>
 						</div>
 						<?php print $feed_icons ?>
 					</div>
