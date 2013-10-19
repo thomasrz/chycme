@@ -13,8 +13,14 @@ $(document).ready(function(){
 		nextId: 'nextBtnProd'
 	});
 	
-	$("body.page-user .content-wrap #center #user-register input.form-text").each(function(index, value){
+	$("#user-register input.form-text, #user-login input.form-text").each(function(index, value){
 		$(this).val($(this).parent().find("label").text().split(": *")[0]);
+	});
+	
+	
+	$("#user-register input.form-text, #user-login input.form-text")
+	.focus(function (){
+		$(this).val("");
 	});
 
 	$('.activator').click(function(){

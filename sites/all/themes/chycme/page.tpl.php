@@ -45,20 +45,26 @@
 							<?php print $sidebar_left; ?>
 						</div>
 					<?php endif; ?>
-
-					<div id="center">
-						<?php print $breadcrumb; ?>
-						<?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
-						<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-						<?php if ($title && arg(0) != 'produtos'): print '<div class="beforeTitle"></div><h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2><div class="afterTitle"></div>'; endif; ?>
-						<?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
-						<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
+					
+					<?php if ($tabs): ?>
+					  <div id="tabs-wrapper">
+						  <?php if ($tabs): ?><ul class="tabs primary"><?php print $tabs; ?></ul><?php endif; ?>
+						  <?php if ($tabs2): ?><ul class="tabs secondary"><?php print $tabs2; ?></ul><?php endif; ?>
+					  </div>
+					<?php endif; ?>
+					
+					<div id="center">					  
+						<?php if ($title && arg(0) != 'produtos'): ?>
+							<div class="beforeTitle"></div>
+								<h2><?php print $title; ?></h2>
+							<div class="afterTitle"></div>
+						<?php endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
-						<?php print $help; ?>
-						<div class="clear-block">
-							<?php print $content ?>
+						<?php if (!empty($help)): print $help; endif; ?>
+						<div id="content-content" class="clear-block">
+							<?php print $content; ?>
 						</div>
-						<?php print $feed_icons ?>
+						<?php print $feed_icons; ?>
 					</div>
 				</div>
 			</div>

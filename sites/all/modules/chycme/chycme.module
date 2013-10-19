@@ -3,6 +3,10 @@ function create_new_role() {
   db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
 }
 
-function chycme_form_alter(&$form, &$form_state, $form_id) {
+/*
+  Data: 19 de Outubro de 2013
+  Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
+  */
+/*function chycme_form_alter(&$form, &$form_state, $form_id) {
   print_r($form_id);
-}
+}*/
