@@ -17,14 +17,18 @@
  *
  * @ingroup views_templates
  */
-$product_box_id = url('node/'. $row->nid);
-$product_box_id = str_replace('/','-', $product_box_id);
- 
-?><div class='product-box <?php print 'product-box-'. $product_box_id;?>'><a class="boxclose" id="boxclose-<?php print $product_box_id;?>"></a>
-<?php foreach ($fields as $id => $field): ?>
+?>
+<?php 
+foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>
     <?php print $field->separator; ?>
   <?php endif; ?>
+  <?php if ($field->class == 'title-1'){ 
+    $product_box_id = url('node/'. $row->nid);
+	$product_box_id = str_replace('/','-', $product_box_id);
+  ?>
+    <div class='product-box <?php print 'product-box-'. $product_box_id;?>'><a class="boxclose" id="boxclose"></a>
+  <?php } ?>
   <<?php print $field->inline_html;?> class="views-field-<?php print $field->class; ?>">
     <?php if ($field->label): ?>
       <label class="views-label-<?php print $field->class; ?>">
