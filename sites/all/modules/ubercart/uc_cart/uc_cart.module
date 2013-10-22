@@ -899,6 +899,7 @@ function uc_cart_view_form($form_state, $items = NULL) {
     'type' => 'amount',
   );
   $i = 0;
+  $total = 0;
   foreach ($items as $item) {
     $display_item = module_invoke($item->module, 'cart_display', $item);
     if (!empty($display_item)) {
@@ -934,17 +935,43 @@ function uc_cart_view_form($form_state, $items = NULL) {
         '#value' => uc_price($display_item['#total'], $context),
         '#theme' => 'uc_cart_view_price',
       );
+	  $total += $display_item['#total'];
       $i++;
     }
   }
+  
+  $form['items']['update'] = array(
+    '#type' => 'submit',
+    '#name' => 'update-cart',
+    '#value' => t('Atualizar carrinho'),
+    '#submit' => array('uc_cart_view_form_submit', 'uc_cart_view_form_update_message'),
+  );
+  
   $form['items'] = tapir_get_table('uc_cart_view_table', $form['items']);
-
+  
   // If the continue shopping element is enabled...
+  $form['markup'] = array(
+    '#type' => 'markup',
+	'#value' => '<div><h3>TOTAL NO CARRINHO</h3>
+	               <div class="total-table">
+				     <div class="row row-1">
+				       <div class="col col-1">SUBTOTAL</div><div class="col col-2">'. uc_price($total, $context) .'</div>
+				     </div>
+					 <div class="row row-2">
+				       <div class="col col-1">ENTREGA</div><div class="col col-2">Frete Grátis</div>
+				     </div>
+					 <div class="row row-3">
+				       <div class="col col-1">TOTAL DO PEDIDO</div><div class="col col-2">'. uc_price($total, $context) .'</div>
+				     </div>
+				   </div>
+	             </div>'
+  );
   if (($cs_type = variable_get('uc_continue_shopping_type', 'link')) !== 'none') {
     // Setup the text used for the element.
     $cs_text = variable_get('uc_continue_shopping_text', '') ? variable_get('uc_continue_shopping_text', '') : t('Continue shopping');
 
     // Add the element to the form based on the element type.
+	/*
     if (variable_get('uc_continue_shopping_type', 'link') == 'link') {
       $form['continue_shopping'] = array(
         '#value' => l($cs_text, uc_cart_continue_shopping_url()),
@@ -957,19 +984,15 @@ function uc_cart_view_form($form_state, $items = NULL) {
         '#submit' => array('uc_cart_view_form_submit', 'uc_cart_view_form_continue_shopping'),
       );
     }
+	*/
   }
-
+  
   // Add the control buttons for updating and proceeding to checkout.
-  $form['update'] = array(
-    '#type' => 'submit',
-    '#name' => 'update-cart',
-    '#value' => t('Update cart'),
-    '#submit' => array('uc_cart_view_form_submit', 'uc_cart_view_form_update_message'),
-  );
+  
   if (variable_get('uc_checkout_enabled', TRUE)) {
     $form['checkout'] = array(
       '#type' => 'submit',
-      '#value' => t('Checkout'),
+      '#value' => t('Fazer o Pagamento!'),
       '#submit' => array('uc_cart_view_form_submit', 'uc_cart_view_form_checkout'),
     );
   }
@@ -1126,6 +1149,8 @@ function uc_cart_view_table($table) {
     $table[$i]['desc']['#cell_attributes'] = array('class' => 'desc');
 	$table[$i]['pr_unit']['#cell_attributes'] = array('class' => 'pr_unit');
     $table[$i]['qty']['#cell_attributes'] = array('class' => 'qty');
+	$table[$i]['qty']['#prefix'] = '<span class="less-itens">-</span>';
+	$table[$i]['qty']['#suffix'] = '<span class="more-itens">+</span>';
     $table[$i]['total']['#cell_attributes'] = array('class' => 'price');
     $table[$i]['#attributes'] = array('valign' => 'top');
   }
@@ -1134,6 +1159,7 @@ function uc_cart_view_table($table) {
     'revision' => 'themed-original',
     'type' => 'amount',
   );
+  /*
   $table[] = array(
     'total' => array(
       '#value' => '<span id="subtotal-title">'. t('Subtotal:') .'</span> '. uc_price($subtotal, $context),
@@ -1143,7 +1169,7 @@ function uc_cart_view_table($table) {
       ),
     ),
   );
-
+  */
   return $table;
 }
 
