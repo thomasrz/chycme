@@ -1095,21 +1095,22 @@ function uc_cart_view_table($table) {
       'weight' => 0,
     ),
     'image' => array(
-      'cell' => t('Products'),
+      'cell' => t(''),
       'weight' => 1,
     ),
     'desc' => array(
-      'cell' => '',
+      'cell' => 'Produto',
       'weight' => 2,
     ),
-    'qty' => array(
-      'cell' => t('Qty.'),
+	'pr_unit' => array(
+      'cell' => t('Preço'),
       'weight' => 3,
     ),
-	'pr_unit' => array(
-      'cell' => t('Pr. Unit'),
+    'qty' => array(
+      'cell' => t('Quantidade'),
       'weight' => 4,
     ),
+	
     'total' => array(
       'cell' => t('Total'),
       'weight' => 5,
@@ -1123,6 +1124,7 @@ function uc_cart_view_table($table) {
     $table[$i]['remove']['#cell_attributes'] = array('align' => 'center', 'class' => 'remove');
     $table[$i]['image']['#cell_attributes'] = array('class' => 'image');
     $table[$i]['desc']['#cell_attributes'] = array('class' => 'desc');
+	$table[$i]['pr_unit']['#cell_attributes'] = array('class' => 'pr_unit');
     $table[$i]['qty']['#cell_attributes'] = array('class' => 'qty');
     $table[$i]['total']['#cell_attributes'] = array('class' => 'price');
     $table[$i]['#attributes'] = array('valign' => 'top');
