@@ -55,12 +55,12 @@ $(document).ready(function(){
 		Data: 17/10/2013
 		Obs:
 	 */
-	$('body.page-produtos #center .view-produtos .item-list li.views-row').click(function(){
-		product_id = $(this).find('a.activator').attr('href');
+	$('.activator').click(function(){
+		box = $(this).parent().parent().parent();
+		product_id = $(this).attr('href');
 		product_id = product_id.replace(/\//g,"-"); //regex to replace / to -
 		$('#overlay').fadeIn('fast',function(){
-			$('.product-box-'+product_id).show();
-			$('.product-box-'+product_id).animate({'top':'20px'},500);
+			box.find('.product-box-'+product_id).show().animate({'top':'20px'},500);
 		});
 		return false;
 	});
@@ -74,7 +74,7 @@ $(document).ready(function(){
 	*/
 	$('.boxclose').click(function(){
 		parent_box = $(this).parent('.product-box');
-		$(parent_box).animate({'top':'-200px'},500,function(){
+		$(parent_box).animate({'top':'-500px'},500,function(){
 			$(parent_box).fadeOut('fast');
 			$('#overlay').fadeOut('fast');
 		});
