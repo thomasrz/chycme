@@ -1049,14 +1049,14 @@ padding: 0 0 6px 7px;
 width: 115px;
 }
 
-body.page-produtos #sidebar-left .view-content li,
+body.page-produtos #sidebar-left .view-representadas .item-list li,
 body.page-produtos #sidebar-left #block-uc_catalog-0 li {
 list-style: none outside none;
 margin: 0;
 padding: 0;
 }
 
-body.page-produtos #sidebar-left .view-content li a,
+body.page-produtos #sidebar-left .view-representadas .item-list li a,
 body.page-produtos #sidebar-left #block-uc_catalog-0 li a {
 color: #96969A;
 display: block;
@@ -1082,7 +1082,7 @@ text-transform: uppercase;
 }
 
 html body.page-produtos #block-views-produtos-block_3 {
-border-bottom: 1px solid #666666;
+border-bottom: 1px solid #E4E4E4;
 height: 279px;
 }
 
@@ -1090,24 +1090,20 @@ html body.page-produtos #block-views-produtos-block_2 {
 padding: 23px 0 0;
 }
 
-body.page-produtos #center .view-produtos .item-list ul {
+body.page-produtos #center .view-produtos .item-list > ul {
 margin:0;
 padding:0;
 }
 
-body.page-produtos #center .view-produtos .item-list li.views-row {
+body.page-produtos #center .view-produtos .views-row {
 background: none repeat scroll 0 0 #FFFFFF;
 border-radius: 7px 7px 7px 7px;
 box-shadow: 0 0 2px #888888;
 float: left;
 height: 217px;
-margin: 0 15px 0 0;
+margin: 3px 16px 0 0;
 overflow: hidden;
-width: 188px;
-}
-
-html body.page-produtos #center .view-produtos .item-list .views-row-last {
-margin: 3px 0 0 0;
+width: 160px;
 }
 
 body.page-produtos #center .view-produtos .views-field-field-image-cache-fid {
@@ -1122,50 +1118,40 @@ width: 188px;
 }
 
 body.page-produtos #center .view-produtos .views-field-field-image-cache-fid img {
-display: block;
 max-height: 160px;
-max-width: 188px;
+max-width: 160px;
 }
 
-body.page-produtos #center .view-produtos .views-field-title {
+body.page-produtos #center .view-produtos .views-field-title a {
 color: #888888;
 display: block;
 font-size: 11px;
-line-height: 13px;
-max-height: 23px;
-min-height: 13px;
+line-height: 12px;
+max-height: 24px;
+min-height: 14px;
 overflow: hidden;
 padding: 8px 0 0 16px;
 text-decoration: none;
-width: 188px;
+width: 145px;
 }
 
 body.page-produtos #center .view-produtos .views-field-sell-price {
 color: #888888;
 font-size: 11px;
-height: 16px;
+height: 13px;
 line-height: 13px;
 overflow: hidden;
-padding: 8px 16px 0;
-text-decoration: none;
-width: 208px;
+padding: 8px 0 0 16px;
+width: 145px;
 }
 
-body.page-produtos #center .view-produtos .views-field-body {
-display:none;
-}
-body.page-produtos #center .view-produtos .views-field-model {
-display:none;
-}
-body.page-produtos #center .view-produtos .views-field-addtocartlink {
-display:none;
-}
-body.page-produtos #center .view-produtos .views-field-title-1 {
-display:none;
+body.page-produtos #center .view-produtos .views-row:hover .views-field-title a,
+body.page-produtos #center .view-produtos .views-row:hover .views-field-sell-price {
+text-decoration:underline;
 }
 
-body.page-produtos #center .view-produtos .item-list li.views-row.product-box-active {
-background: #FFFFFF;
+body.page-produtos #center .view-produtos .product-box {
+background: none repeat scroll 0 0 #FFFFFF;
 border-radius: 20px 20px 20px 20px;
 display: none;
 height: 400px;
@@ -1176,6 +1162,48 @@ top: 0;
 width: 756px;
 z-index: 9999;
 padding:50px
+}
+
+body.page-produtos #center .view-produtos .product-box .views-field-title-1 a {
+color: #666666;
+display: block;
+font-size: 18px;
+font-weight: 700;
+padding: 0 0 20px;
+text-decoration: none;
+}
+
+body.page-produtos #center .view-produtos .product-box .views-field-field-image-cache-fid-1 {
+border: 1px solid #E4E4E4;
+display: block;
+float: left;
+height: 240px;
+margin: 0 30px 0 0;
+padding: 15px;
+width: 240px;
+}
+
+body.page-produtos #center .view-produtos .product-box .views-field-sell-price-1 {
+color: #9F55CE;
+float: left;
+font-size: 14px;
+font-weight: 700;
+padding: 0 0 15px;
+width: 452px;
+}
+
+body.page-produtos #center .view-produtos .product-box a.boxclose {
+background: none repeat scroll 0 0 #CCCCCC;
+border-radius: 10px 10px 10px 10px;
+bottom: 25px;
+color: #888888;
+content: "X";
+display: block;
+font-size: 15px;
+height: 20px;
+position: absolute;
+right: 35px;
+width: 20px;
 }
 
 .overlay {
