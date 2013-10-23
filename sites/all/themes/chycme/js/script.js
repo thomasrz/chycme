@@ -42,13 +42,24 @@ $(document).ready(function(){
 		Dev: Thomaz/Jefferson
 		Data: 17/10/2013
 		Obs: Os inputs terá um valor inicial, que irá ser o label do mesmo, após clicar esse valor deve sumir deixando o campo livre.
-	*/
+	*/	
 	$("#user-register input.form-text, #user-login input.form-text")
-	.focus(function (){
-		$(this).val("");
-	});
+		.focus(function (){
+			if($(this).val() == $(this).parent().find('label').text())
+			{
+				$(this).val('');
+			}
+		})
+		.blur(function (){
+			if($(this).val() === '')
+			{	
+				$(this).val($(this).parent().find('label').text());
+			}
+		});
+	$("body.page-user #user-register #edit-profile-clientes-telefone").mask("(99)9999-9999");
+	$("body.page-user #user-register #edit-profile-clientes-celular").mask("(99)9?9999-9999");
 
-	
+
 	/*
 		Script:
 		Dev: Thomaz/Jefferson
@@ -78,6 +89,5 @@ $(document).ready(function(){
 			$(parent_box).fadeOut('fast');
 			$('#overlay').fadeOut('fast');
 		});
-	});
-  
+	});  
 });

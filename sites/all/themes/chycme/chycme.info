@@ -7,6 +7,7 @@ stylesheets[all][] = css/style_chycme.css
 
 scripts[] = js/easySlider1.7.js
 scripts[] = js/selectivizr-min.js
+scripts[] = js/jquery.maskedinput.min.js
 scripts[] = js/script.js
 
 regions[header] = Cabeçalho
