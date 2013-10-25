@@ -39,7 +39,9 @@
 					</div>
 					<?php } else { ?>
 						<div class="title">
-							<h1><?php print $title; ?></h1>
+							<div class="beforeTitle"></div>
+							<h2><?php print $title; ?></h2>
+							<div class="afterTitle specialAfterTitle"></div>
 						</div>
 					<?php } } ?>
 			

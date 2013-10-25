@@ -66,7 +66,7 @@ $(document).ready(function(){
 		Data: 17/10/2013
 		Obs:
 	 */
-	$('.activator').click(function(){
+	$('.view-produtos .activator, .view-produtos .views-field-title a, .category-grid-products td a').click(function(){
 		box = $(this).parent().parent().parent();
 		product_id = $(this).attr('href');
 		product_id = product_id.replace(/\//g,"-"); //regex to replace / to -

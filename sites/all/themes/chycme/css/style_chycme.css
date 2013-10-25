@@ -75,6 +75,10 @@ background: #CCCCCC;
 background: #999999;
 }
 
+.help, .messages.status {
+clear:both;
+}
+
 /*****************************************************************************************/
 /***** HEADER *****/
 /*****************************************************************************************/
@@ -468,19 +472,21 @@ html body.front #center > h2 {
 display:none;
 }
 
-#center > h2 {
+#center > h2,
+.content-wrap > .content > .title > h2 {
 border-bottom: 3px solid #9C3082;
 display: block;
 float: left;
 font-size: 22px;
 font-weight: 700;
-height: 43px;
+height: 25px;
 letter-spacing: 1px;
+line-height: 43px;
 margin: 0 0 60px;
+max-width: 378px;
 overflow: hidden;
-padding: 30px 115px 0 20px;
+padding: 30px 115px 18px 20px;
 text-align: center;
-width: 378px;
 }
 
 #center > .beforeTitle {
@@ -500,6 +506,15 @@ height: 43px;
 max-width: 430px;
 padding: 31px 0 0;
 width: 100%;
+}
+
+.content > .title > .afterTitle.specialAfterTitle {
+border-bottom: 1px solid #E4E4E4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 597px;
 }
 
 .content-wrap .content {
@@ -1118,12 +1133,6 @@ body.page-catalog {
 background:#ffffff;
 }
 
-body.page-produtos .content-wrap,
-body.page-catalog .content-wrap {
-/*background: url("../../../../../apoio/guia-produto.jpg") repeat scroll 103px -145px rgba(0, 0, 0, 0);
-height: 856px;*/
-}
-
 body.page-produtos .breadcrumb,
 body.page-catalog .breadcrumb {
 display:none;
@@ -1173,6 +1182,23 @@ width: 681px;
 html body.page-catalog #center > .afterTitle {
 width: 438px;
 }
+
+/* ------- Página: Página de catalogo ------- */
+html body.page-catalog .category-grid-products tbody {
+border: medium none;
+}
+
+html body.page-catalog .category-grid-products td {
+background-color: #FFFFFF;
+border: medium none;
+padding: 0;
+text-align: left;
+}
+
+html body.page-catalog .category-grid-products td span {
+text-align:left;
+}
+
 
 /* sidebar */	
 body.page-produtos #sidebar-left,
@@ -1242,6 +1268,11 @@ padding: 0 0 10px;
 text-transform: uppercase;
 }
 
+html body.page-produtos #block-views-produtos-block_3 .view-content {
+height: 222px;
+width: 100%;
+}
+
 html body.page-catalog #center .category-grid-products table {
 border: none;
 clear: both;
@@ -1257,6 +1288,11 @@ height: 279px;
 
 html body.page-produtos #block-views-produtos-block_2 {
 padding: 23px 0 0;
+}
+
+html body.page-produtos #block-views-produtos-block_2 .view-content {
+height: 222px;
+width: 100%;
 }
 
 body.page-produtos #center .view-produtos .item-list > ul,
