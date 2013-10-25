@@ -18,7 +18,7 @@ $(document).ready(function(){
 		Data: 17/10/2013
 		Obs: Jefferson fez uma atualização, script usando a biblioteca easySlider.
 	*/
-	$("html .content-wrap .representadas-home .item-list").easySlider({
+	$(".representadas-home .item-list").easySlider({
 		auto: false, 
 		continuous: false,
 		prevId: 'prevBtnProd',
@@ -27,35 +27,34 @@ $(document).ready(function(){
 	
 	
 	/*
-		Script: Value dos inputs
+		Script: Value dos inputs e Limpar campos após o clique
 		Dev: Jefferson
 		Data: 17/10/2013
 		Obs: Inserir os labels como valor inicial nos inputs.
+		Os inputs terá um valor inicial, que irá ser o label do mesmo, após clicar esse valor deve sumir deixando o campo livre.
 	*/
-	$("#user-register input.form-text, #user-login input.form-text").each(function(index, value){
-		$(this).val($(this).parent().find("label").text().split(": *")[0]);
-	});
-	
-	
-	/*
-		Script: Limpar campos após o clique
-		Dev: Thomaz/Jefferson
-		Data: 17/10/2013
-		Obs: Os inputs terá um valor inicial, que irá ser o label do mesmo, após clicar esse valor deve sumir deixando o campo livre.
-	*/	
-	$("#user-register input.form-text, #user-login input.form-text")
-		.focus(function (){
-			if($(this).val() == $(this).parent().find('label').text())
-			{
-				$(this).val('');
-			}
-		})
-		.blur(function (){
-			if($(this).val() === '')
-			{	
-				$(this).val($(this).parent().find('label').text());
-			}
-		});
+	function placeholdDrupalInput (objetoID) {
+		objetoID
+			.val(objetoID.parent().find("label").text().split(":")[0]);
+
+		objetoID
+			.focus(function (){
+				if(objetoID.val() == objetoID.parent().find('label').text().split(":")[0])
+				{
+					$(this).val('');
+				}
+			})
+			.blur(function (){
+				if(objetoID.val() === '')
+				{	
+					objetoID.val(objetoID.parent().find('label').text().split(":")[0]);
+				}
+			});
+	}
+	placeholdDrupalInput($("#user-register input.form-text"));
+	placeholdDrupalInput($("#user-login input.form-text"));
+	placeholdDrupalInput($("#user-pass input.form-text"));
+
 	$("body.page-user #user-register #edit-profile-clientes-telefone").mask("(99)9999-9999");
 	$("body.page-user #user-register #edit-profile-clientes-celular").mask("(99)9?9999-9999");
 
@@ -66,7 +65,7 @@ $(document).ready(function(){
 		Data: 17/10/2013
 		Obs:
 	 */
-	$('.view-produtos .activator, .view-produtos .views-field-title a, .category-grid-products td a').click(function(){
+	$('.activator').click(function(){
 		box = $(this).parent().parent().parent();
 		product_id = $(this).attr('href');
 		product_id = product_id.replace(/\//g,"-"); //regex to replace / to -
