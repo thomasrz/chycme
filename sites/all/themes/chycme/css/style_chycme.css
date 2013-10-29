@@ -1163,7 +1163,7 @@ display:none;
 
 /* ------- Página: Página de produtos ------- */
 html body.page-produtos,
-body.page-catalog {
+html body.page-catalog {
 background:#ffffff;
 }
 
@@ -1179,58 +1179,54 @@ height: 76px;
 width: 1050px;
 }
 
-body.page-produtos .title > img,
-body.page-catalog .title > img {
+body.page-produtos .title > img {
 border-bottom: 3px solid #9C3082;
 display: block;
 float: left;
-font-size:760 22px;
 font-weight: 700;
 height: 43px;
 letter-spacing: 1px;
 margin: 0 0 20px;
-padding: 16px 40px 14px;
+padding: 16px 83px 14px;
 text-align: center;
+width: 149px;
+}
+
+html body.page-catalog .content-wrap > .content > .title > h2 {
+border-bottom: 3px solid #9C3082;
+display: block;
+float: left;
+font-size: 22px;
+font-weight: 700;
+height: 25px;
+letter-spacing: 1px;
+line-height: 43px;
+margin: 0 0 30px;
+overflow: hidden;
+padding: 30px 0 18px;
+text-align: left;
+text-indent: 15px;
+width: 30%;
 }
 
 body.page-produtos .title > .beforeTitle,
-body.page-catalog #center > .beforeTitle {
-border-bottom: 1px solid #e4e4e4;
+body.page-catalog .title > .beforeTitle {
+border-bottom: 1px solid #E4E4E4;
 display: block;
 float: left;
 height: 43px;
 padding: 31px 0 0;
-width: 138px;
+width: 15%;
 }
 
 body.page-produtos .title > .afterTitle,
-body.page-catalog #center > .afterTitle {
-border-bottom: 1px solid #e4e4e4;
+body.page-catalog .title > .afterTitle {
+border-bottom: 1px solid #E4E4E4;
 display: block;
 float: left;
 height: 43px;
 padding: 31px 0 0;
-width: 681px;
-}
-
-html body.page-catalog #center > .afterTitle {
-width: 422px;
-}
-
-/* ------- Página: Página de catalogo ------- */
-html body.page-catalog .category-grid-products tbody {
-border: medium none;
-}
-
-html body.page-catalog .category-grid-products td {
-background-color: #FFFFFF;
-border: medium none;
-padding: 0;
-text-align: left;
-}
-
-html body.page-catalog .category-grid-products td span {
-text-align:left;
+width: 55%;
 }
 
 /* sidebar */	
@@ -1324,7 +1320,8 @@ clear: both;
 height: 279px;
 }
 
-html body.page-produtos #block-views-produtos-block_2 {
+html body.page-produtos #block-views-produtos-block_2,
+html body.page-catalog #block-views-produtos-block_5 {
 padding: 23px 0 0;
 }
 

@@ -35,29 +35,29 @@ $(document).ready(function(){
 	*/
 	function placeholdDrupalInput (objetoID) {
 		objetoID
-			.val(objetoID.parent().find("label").text().split(":")[0]);
-
-		objetoID
+			.each(function (index, value) {
+				$(this).val($(this).parent().find("label").text().split(":")[0]);
+			})
 			.focus(function (){
-				if(objetoID.val() == objetoID.parent().find('label').text().split(":")[0])
+				if($(this).val() == $(this).parent().find('label').text().split(":")[0])
 				{
 					$(this).val('');
 				}
 			})
 			.blur(function (){
-				if(objetoID.val() === '')
+				if($(this).val() === '')
 				{	
-					objetoID.val(objetoID.parent().find('label').text().split(":")[0]);
+					$(this).val($(this).parent().find('label').text().split(":")[0]);
 				}
 			});
 	}
+	
+	$("body.page-user #user-register #edit-profile-clientes-telefone").mask("(99)9999-9999");
+	$("body.page-user #user-register #edit-profile-clientes-celular").mask("(99)9?9999-9999");
+	
 	placeholdDrupalInput($("#user-register input.form-text"));
 	placeholdDrupalInput($("#user-login input.form-text"));
 	placeholdDrupalInput($("#user-pass input.form-text"));
-
-	$("body.page-user #user-register #edit-profile-clientes-telefone").mask("(99)9999-9999");
-	$("body.page-user #user-register #edit-profile-clientes-celular").mask("(99)9?9999-9999");
-
 
 	/*
 		Script:

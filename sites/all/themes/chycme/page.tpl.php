@@ -27,20 +27,25 @@
 				<div class="content container-box">
 					<?php if (arg(0) == 'produtos') {
 						$node = node_load(arg(1));
-						if (isset($node->field_logomarca['0']['filepath'])) {
-					?>
-					<div class="title">
-						<div class="beforeTitle"></div>
-						<img src="<?php print url($node->field_logomarca['0']['filepath']); ?>"></img>
-						<div class="afterTitle"></div>
-					</div>
-					<?php } else { ?>
+						if (isset($node->field_logomarca['0']['filepath'])) { ?>
+							<div class="title">
+								<div class="beforeTitle"></div>
+								<img src="<?php print url($node->field_logomarca['0']['filepath']); ?>"></img>
+								<div class="afterTitle"></div>
+							</div>
+						<?php } else { ?>
+							<div class="title">
+								<div class="beforeTitle"></div>
+								<h2><?php print $title; ?></h2>
+								<div class="afterTitle specialAfterTitle"></div>
+							</div>
+					<?php } } else if (arg(0) == 'catalog') { ?>
 						<div class="title">
 							<div class="beforeTitle"></div>
 							<h2><?php print $title; ?></h2>
-							<div class="afterTitle specialAfterTitle"></div>
+							<div class="afterTitle"></div>
 						</div>
-					<?php } } ?>
+					<?php } ?>
 			
 					<?php if ($sidebar_left): ?>
 						<div id="sidebar-left" class="sidebar">
@@ -56,7 +61,7 @@
 					<?php endif; ?>
 					
 					<div id="center">					  
-						<?php if ($title && arg(0) != 'produtos'): ?>
+						<?php if ($title && arg(0) != 'produtos' && arg(0) != 'catalog'): ?>
 							<div class="beforeTitle"></div>
 								<h2><?php print $title; ?></h2>
 							<div class="afterTitle"></div>
