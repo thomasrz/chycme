@@ -1162,6 +1162,25 @@ display:none;
 }
 
 /* ------- Página: Página de produtos ------- */
+html body .blockUI.blockOverlay {
+background-color: transparent!important;
+border: medium none!important;
+cursor: wait!important;
+height: 100%!important;
+left: 0!important;
+margin: 0!important;
+opacity: 0.6!important;
+padding: 0!important;
+position: fixed!important;
+top: 0!important;
+width: 100%!important;
+z-index: 1000!important;
+}
+
+html body .blockUI.blockMsg.blockPage {
+z-index: 99999!important;
+}
+
 html body.page-produtos,
 html body.page-catalog {
 background:#ffffff;
