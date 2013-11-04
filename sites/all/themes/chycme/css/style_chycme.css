@@ -353,9 +353,11 @@ display:none;
 body.logged-in .header-wrap #block-uc_ajax_cart-0 table td.cart-block-summary-total .uc-price {
 color: #A92179;
 display: block;
-font-size: 18px;
+font-size: 17px;
 font-weight: 700;
+overflow: hidden;
 padding: 13px 0 0 4px;
+width: 94px;
 }
 
 body.logged-in .header-wrap #block-uc_ajax_cart-0 .cart-block-summary-links ul.links {
