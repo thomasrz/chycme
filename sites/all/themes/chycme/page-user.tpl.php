@@ -51,9 +51,11 @@
 					<?php endif; ?>
 
 					<div id="center">
-						<div class="beforeTitle"></div>
-						<?php print '<h2>'. $title .'</h2>'; ?>
-						<div class="afterTitle"></div>
+            <div class="title">
+              <div class="beforeTitle"></div>
+              <?php print '<h2>'. $title .'</h2>'; ?>
+              <div class="afterTitle"></div>
+            </div>
 					
 						<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block"><ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
 						<?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>

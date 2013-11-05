@@ -19,4 +19,5 @@
   * the view is modified.
   */
 ?>
+
 <span class="more-item">+</span><span class="less-item">-</span><?php print $output; ?>

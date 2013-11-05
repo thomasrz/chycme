@@ -406,8 +406,8 @@ width: 99px;
 /***** SLIDER *****/
 /*****************************************************************************************/
 .slider-wrap {
-background: #CCCCCC;
-height: 499px;
+background: #f1f4f9;
+height: 700px;
 overflow: hidden;
 position: relative;
 width: 100%;
@@ -420,11 +420,11 @@ margin:0 auto;
 .slider-wrap li {
 list-style: none outside none;
 overflow: hidden;
-width: 1263px;
+width: 1900px;
 }
 
 .slider-wrap li img {
-width:1263px;
+width:1900px;
 }
 
 .slider-wrap #prevBtn {
@@ -432,7 +432,7 @@ display: block;
 height: 37px;
 left: 0;
 position: absolute;
-top: 226px;
+top: 330px;
 width: 40px;
 }
 
@@ -452,7 +452,7 @@ display: block;
 height: 37px;
 right: 0;
 position: absolute;
-top: 226px;
+top: 330px;
 width: 40px;
 }
 
@@ -705,6 +705,11 @@ background:#BC53A3;
 }
 
 /* ------- Página: Login ------- */
+/* GERAL */
+body.page-user #center table {
+width:100%;
+}
+
 body.page-user #center #user-login {
 margin: 20px auto;
 padding: 0 0 0 100px;
@@ -742,7 +747,14 @@ padding: 0 10px;
 width: 440px;
 }
 
-body.page-user .content-wrap #center > h2 {
+body.page-user .content-wrap #center > .title {
+clear: both;
+display: block;
+height: 136px;
+width: 1050px;
+}
+
+body.page-user .content-wrap #center > .title > h2 {
 border-bottom: 3px solid #9c3082;
 display: block;
 float: left;
@@ -755,7 +767,7 @@ padding: 30px 115px 0 20px;
 text-align: center;
 }
 
-body.page-user .content-wrap #center > .beforeTitle {
+body.page-user .content-wrap #center > .title > .beforeTitle {
 border-bottom: 1px solid #e4e4e4;
 display: block;
 float: left;
@@ -764,7 +776,7 @@ padding: 31px 0 0;
 width: 105px;
 }
 
-body.page-user .content-wrap #center > .afterTitle {
+body.page-user .content-wrap #center > .title > .afterTitle {
 border-bottom: 1px solid #e4e4e4;
 display: block;
 float: left;
@@ -1590,6 +1602,44 @@ width: 100%;
 /* ------- Página: Página de Lista de Produtos ------- */
 body.page-cart {
 background: /*url("../../../../../apoio/chycme/sites/files/Layout/6 - Lista  pedidos.jpg") repeat scroll 0 -136px*/ #ffffff;
+}
+
+body.page-cart .content-wrap #center > .title {
+clear: both;
+display: block;
+height: 136px;
+width: 1050px;
+}
+
+body.page-cart .content-wrap #center > .title > h2 {
+border-bottom: 3px solid #9c3082;
+display: block;
+float: left;
+font-size: 22px;
+font-weight: 700;
+height: 43px;
+letter-spacing: 1px;
+margin: 0 0 60px;
+padding: 30px 115px 0 20px;
+text-align: center;
+}
+
+body.page-cart .content-wrap #center > .title > .beforeTitle {
+border-bottom: 1px solid #e4e4e4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 105px;
+}
+
+body.page-cart .content-wrap #center > .title > .afterTitle {
+border-bottom: 1px solid #e4e4e4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 575px;
 }
 
 html body.page-cart #content-content {

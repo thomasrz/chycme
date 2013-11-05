@@ -62,9 +62,11 @@
 					
 					<div id="center">					  
 						<?php if ($title && arg(0) != 'produtos' && arg(0) != 'catalog'): ?>
-							<div class="beforeTitle"></div>
-								<h2><?php print $title; ?></h2>
-							<div class="afterTitle"></div>
+              <div class="title">
+                <div class="beforeTitle"></div>
+                  <h2><?php print $title; ?></h2>
+                <div class="afterTitle"></div>
+              </div>
 						<?php endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php if (!empty($help)): print $help; endif; ?>
