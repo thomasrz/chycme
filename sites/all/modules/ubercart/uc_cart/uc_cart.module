@@ -1147,10 +1147,10 @@ function uc_cart_view_table($table) {
     $table[$i]['remove']['#cell_attributes'] = array('align' => 'center', 'class' => 'remove');
     $table[$i]['image']['#cell_attributes'] = array('class' => 'image');
     $table[$i]['desc']['#cell_attributes'] = array('class' => 'desc');
-	$table[$i]['pr_unit']['#cell_attributes'] = array('class' => 'pr_unit');
+    $table[$i]['pr_unit']['#cell_attributes'] = array('class' => 'pr_unit');
     $table[$i]['qty']['#cell_attributes'] = array('class' => 'qty');
-	$table[$i]['qty']['#prefix'] = '<span class="less-itens">-</span>';
-	$table[$i]['qty']['#suffix'] = '<span class="more-itens">+</span>';
+    $table[$i]['qty']['#prefix'] = '<span class="less-itens">-</span>';
+    $table[$i]['qty']['#suffix'] = '<span class="more-itens">+</span>';
     $table[$i]['total']['#cell_attributes'] = array('class' => 'price');
     $table[$i]['#attributes'] = array('valign' => 'top');
   }

@@ -88,5 +88,8 @@ $(document).ready(function(){
 			$(parent_box).fadeOut('fast');
 			$('#overlay').fadeOut('fast');
 		});
-	});  
+	});
+  
+  $("html body.page-cart #content-content #cart-form-products #edit-items-update").wrap("<div class='wrap-edit-items-update'></div>");
+  
 });
