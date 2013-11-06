@@ -70,6 +70,17 @@
 						<?php endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php if (!empty($help)): print $help; endif; ?>
+						<?php if (isset($node->field_como_funciona)) { ?>
+						<ol class='como-funciona'>
+						<?php foreach ($node->field_como_funciona as $key => $value) { 
+						?>
+						  <li>
+						    <div class='como-funciona-image'><img src="<?php print url($value['filepath']); ?>" alt="<?php print $value['data']['alt']; ?>" /></div>
+						    <div class='como-funciona-description'><?php print $value['data']['description']; ?></div>						
+						  </li>
+						<?php } ?>
+						</ol>
+						<?php } ?>
 						<div id="content-content" class="clear-block">
 							<?php print $content; ?>
 						</div>
