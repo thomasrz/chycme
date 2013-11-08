@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+  $("html body.page-cart #cart-form-products table tbody tr:last-child").hide();
+  $("html body.page-cart #content-content #cart-form-products #edit-items-update").wrap("<div class='wrap-edit-items-update'></div>");
+
 	/*
 		Script: Slide de banners
 		Dev: Thomaz/Jefferson
@@ -89,7 +92,4 @@ $(document).ready(function(){
 			$('#overlay').fadeOut('fast');
 		});
 	});
-  
-  $("html body.page-cart #content-content #cart-form-products #edit-items-update").wrap("<div class='wrap-edit-items-update'></div>");
-  
 });
