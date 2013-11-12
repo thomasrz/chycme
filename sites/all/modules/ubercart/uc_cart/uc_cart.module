@@ -146,7 +146,7 @@ function uc_cart_menu() {
     'file' => 'uc_cart.pages.inc',
   );
   $items['cart/checkout'] = array(
-    'title' => 'Checkout',
+    'title' => 'Finalizar Compra',
     'description' => 'Purchase the items in your shopping cart.',
     'page callback' => 'uc_cart_checkout',
     'access arguments' => array('access content'),

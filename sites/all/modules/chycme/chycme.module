@@ -7,6 +7,284 @@ function create_new_role() {
   Data: 19 de Outubro de 2013
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
   */
-/*function chycme_form_alter(&$form, &$form_state, $form_id) {
-  print_r($form_id);
-}*/
+function chycme_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'uc_cart_checkout_form') {
+	$form['panes']['cart']['#title'] = 'Seu Pedido';
+	/*$form['adicionar_endereco'] = array(
+	  'format' => 'Adicionar endereço',
+	); 
+	print '<pre>';
+	print_r($form);
+	print '</pre>';
+	$form['panes']['enviar_para_endereco'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Enviar para o endereço já cadastrado',
+      '#options' => array('1' => 'Enviar para o endereço já cadastrado')
+    );*/
+	$form['panes']['delivery']['#title'] = 'Adicionar Endereço';
+	$form['panes']['delivery']['#collapsed'] = 1;
+	$form['panes']['comments']['#title'] = 'Notas do pedido';
+	$form['panes']['comments']['comments']['#title'] = 'Notas do pedido';
+	$form['panes']['comments']['#description'] = 'Notas sobre o seu pedido (por exemplo, informações especiais sobre a entrega)';
+	$form['#submit'][] = 'chycme_cheque_info_checkout';
+  }
+}
+
+/**
+ * Redirects if a customer selects PayPal Express Checkout as a payment method.
+ */
+function chycme_cheque_info_checkout($form, &$form_state) {
+  $order_id = intval($_SESSION['cart_order']);
+  $order = uc_order_load($order_id);
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_nome_completo'])) {
+    $order->cheque_info_nome_completo = $_REQUEST['panes']['cheque_info']['cheque_info_nome_completo'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_cpf_cnpj = $_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_num_cheque = $_REQUEST['panes']['cheque_info']['cheque_info_num_cheque'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_banco = $_REQUEST['panes']['cheque_info']['cheque_info_banco'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_agencia = $_REQUEST['panes']['cheque_info']['cheque_info_agencia'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_num_conta = $_REQUEST['panes']['cheque_info']['cheque_info_num_conta'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_telefone = $_REQUEST['panes']['cheque_info']['cheque_info_telefone'];
+  }
+  if (isset($_REQUEST['panes']['cheque_info']['cheque_info_cpf_cnpj'])) {
+    $order->cheque_info_cliente_desde = $_REQUEST['panes']['cheque_info']['cheque_info_cliente_desde'];
+  }
+  if (isset($_REQUEST['panes']['utilizar_endereco']['utilizar_endereco'])) {
+    $order->utilizar_endereco = $_REQUEST['panes']['utilizar_endereco']['utilizar_endereco'];
+  }
+  
+  db_query("UPDATE {uc_orders} set utilizar_endereco = %d, cheque_info_nome_completo = '%s', cheque_info_cpf_cnpj = '%s', cheque_info_num_cheque = '%s', cheque_info_banco = '%s'  WHERE order_id = %d", $order->utilizar_endereco, $order->cheque_info_nome_completo, $order->cheque_info_cpf_cnpj, $order->cheque_info_num_cheque, $order->cheque_info_banco, $order_id) or die(mysql_error());
+
+}
+
+function chycme_payment_method() {
+  $methods[] = array(
+    'id' => 'transferencia',
+    'name' => t('Transferencia Bancária'),
+    'title' => t('Transferencia Bancária Direta'),
+    'desc' => t('Pay by mailing a check or money order.'),
+    'callback' => 'chycme_payment_tansf_bancaria_method_callback',
+    'weight' => 1,
+    'checkout' => TRUE,
+  );
+  $methods[] = array(
+    'id' => 'boleto',
+    'name' => t('Boleto Bancário'),
+    'title' => t('Boleto Bancário'),
+    'desc' => t('Pay by mailing a check or money order.'),
+    'callback' => 'chycme_payment_boleto_method_callback',
+    'weight' => 1,
+    'checkout' => TRUE,
+  );
+  return $methods;
+}
+
+function chycme_payment_tansf_bancaria_method_callback($op, &$arg1, $silent = FALSE) {
+  switch ($op) {
+    case 'cart-details':
+      return variable_get('uc_payment_method_tansf_bancaria', 'Para fazer o pagamento diretamente em nossa conta bancária. Por favor use o ID do seu pedido como referência de pagamento. Seu pedido não será enviado até que o pagamento seja identificado. Você precisa entrar em contato informando os dados de seu depósito/transferência. Banco 55 (Itaú) Agencia 6890 Conta Corrente 06134-1');
+
+    case 'settings':
+      $form['uc_payment_method_transf_bancaria'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Payment gateway transferencia bancaria'),
+        '#default_value' => variable_get('uc_payment_method_transferencia bancaria', ''),
+      );
+      return $form;
+  }
+  
+}
+
+function chycme_payment_boleto_method_callback($op, &$arg1, $silent = FALSE) {
+  switch ($op) {
+    case 'cart-details':
+      return 'Será emitido o boleto conforme dados do cadastro.';
+
+    case 'settings':
+      $form['uc_payment_method_boleto'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Payment gateway boleto'),
+        '#default_value' => variable_get('uc_payment_method_boleto', ''),
+      );
+      return $form;
+  }
+  
+}
+
+/**
+ * Implements hook_checkout_pane().
+ */
+function chycme_checkout_pane() {
+  $panes[] = array(
+    'id' => 'cheque_info',
+    'callback' => 'chycme_pane_cheque_info',
+    'title' => t('Informações do cheque'),
+    'desc' => t('Get the information for where the order needs to ship.'),
+    'weight' => 3,
+    'shippable' => TRUE,
+  );
+  $panes[] = array(
+    'id' => 'utilizar_endereco',
+    'callback' => 'chycme_pane_utilizar_endereco',
+    'title' => t('Utilizar Endereço já cadastrado'),
+    'desc' => t('Get the information for where the order needs to ship.'),
+    'weight' => 3,
+    'shippable' => TRUE,
+  );
+  return $panes;
+}
+
+/**
+ * Gets the cheque_info information.
+ */
+function chycme_pane_cheque_info($op, &$arg1, $arg2) {
+  global $user;
+
+  switch ($op) {
+    case 'view':
+	case 'customer':
+      $description = t('');
+      $cheque_info_nome_completo = $arg1 ? $arg1->cheque_info_nome_completo : '';
+      $contents['cheque_info_nome_completo'] = uc_textfield('Nome completo ou razão social', $cheque_info_nome_completo, uc_address_field_required('nome_completo'));
+      $cheque_info_cpf_cnpj = $arg1 ? $arg1->cheque_info_cpf_cnpj : '';
+      $contents['cheque_info_cpf_cnpj'] = uc_textfield('CPF ou CNPJ', $cheque_info_cpf_cnpj, uc_address_field_required('cpf_cnpj'));
+
+      $cheque_info_num_cheque = $arg1 ? $arg1->cheque_info_num_cheque : '';
+      $contents['cheque_info_num_cheque'] = uc_textfield('Número cheque', $cheque_info_num_cheque, uc_address_field_required('num_cheque'), NULL, 64);
+
+      $cheque_info_banco = $arg1 ? $arg1->cheque_info_banco : '';
+      $contents['cheque_info_banco'] = uc_textfield('Banco', $cheque_info_banco, uc_address_field_required('banco'), NULL, 64);
+
+      $cheque_info_agencia = $arg1 ? $arg1->cheque_info_agencia : '';
+      $contents['cheque_info_agencia'] = uc_textfield('Agência', $cheque_info_agencia, uc_address_field_required('agencia'), NULL, 64);
+      
+      $cheque_info_num_conta = $arg1 ? $arg1->cheque_info_num_conta : '';
+      $contents['cheque_info_num_conta'] = uc_textfield('Número da conta', $cheque_info_num_conta, uc_address_field_required('num_conta'));
+      
+      $cheque_info_telefone = $arg1 ? $arg1->cheque_info_telefone : '';
+      $contents['cheque_info_telefone'] = uc_textfield('Telefone', $cheque_info_telefone, uc_address_field_required('telefone'), NULL, 10, 10);
+      
+      $cheque_info_cliente_desde = $arg1 ? $arg1->cheque_info_cliente_desde : '';
+      $contents['cheque_info_cliente_desde'] = uc_textfield('Cliente desde', $cheque_info_cliente_desde, uc_address_field_required('cliente_desde'), NULL, 32, 16);
+      
+      return array('description' => $description, 'contents' => $contents, 'theme' => 'cheque_info_pane');
+
+    case 'process':
+      $arg1->cheque_info_nome_completo = $arg2['cheque_info_nome_completo'];
+      $arg1->cheque_info_cpf_cnpj = $arg2['cheque_info_cpf_cnpj'];
+      $arg1->cheque_info_num_cheque = $arg2['cheque_info_num_cheque'];
+      $arg1->cheque_info_banco = $arg2['cheque_info_banco'];
+      $arg1->cheque_info_agencia = $arg2['cheque_info_agencia'];
+      $arg1->cheque_info_num_conta = $arg2['cheque_info_num_conta'];
+      $arg1->cheque_info_telefone = $arg2['cheque_info_telefone'];
+      $arg1->cheque_info_cliente_desde = $arg2['cheque_info_cliente_desde'];
+      return TRUE;
+
+    case 'review':
+      $review[] = array('title' => t('Address'), 'data' => uc_order_address($arg1, 'cheque_info', FALSE));
+      if (uc_address_field_enabled('cliente_desde') && !empty($arg1->cheque_info_cliente_desde)) {
+        $review[] = array('title' => t('Phone'), 'data' => check_plain($arg1->cheque_info_cliente_desde));
+      }
+      return $review;
+  }
+}
+
+/**
+ * Gets the cheque_info information.
+ */
+function chycme_pane_utilizar_endereco($op, &$arg1, $arg2) {
+  global $user;
+
+  switch ($op) {
+    case 'view':
+	case 'customer':
+      $description = t('');
+	  $contents['utilizar_endereco'] = array(
+          '#type' => 'checkbox',
+          '#title' => 'Enviar para o endereço já cadastrado',
+          '#options' => array('1' => 'Enviar para o endereço já cadastrado')
+      );
+      return array('description' => $description, 'contents' => $contents, 'theme' => 'theme_utilizar_endereco_pane');
+
+    case 'process':
+      $arg1->utilizar_endereco = $arg2['utilizar_endereco'];
+      return TRUE;
+
+    case 'review':
+      return $review;
+  }
+}
+
+/**
+ * Themes the delivery/billing address forms in tables.
+ *
+ * @see uc_checkout_pane_delivery()
+ * @see uc_checkout_pane_billing()
+ * @ingroup themeable
+ */
+function theme_cheque_info_pane($form) {
+  $output = '';
+  $req = '<span class="form-required">*</span>';
+
+  $output .= '<div class="address-pane-table"><table>';
+
+  foreach (element_children($form) as $field) {
+
+      $title = $form[$field]['#title'] .':';
+      unset($form[$field]['#title']);
+      $output .= '<tr><td class="field-label">';
+      $output .= '<label for="'. $form[$field]['#id'] .'">';
+      if ($form[$field]['#required']) {
+        $output .= $req;
+      }
+      $output .= $title .'</label></td>';
+      $output .= '<td>'. drupal_render($form[$field]) .'</td></tr>';
+    
+  }
+  $output .= '</table></div>';
+
+  foreach (element_children($form) as $element) {
+    $output .= drupal_render($form[$element]);
+  }
+
+  return $output;
+}
+
+function theme_utilizar_endereco_pane($form) {
+  $output = '';
+  $req = '<span class="form-required">*</span>';
+
+  $output .= '<div class="utilizar-endereco-pane-table"><table>';
+
+  foreach (element_children($form) as $field) {
+
+      $title = $form[$field]['#title'] .':';
+      unset($form[$field]['#title']);
+      $output .= '<tr><td class="field-label">';
+      $output .= '<label for="'. $form[$field]['#id'] .'">';
+      if ($form[$field]['#required']) {
+        $output .= $req;
+      }
+      $output .= $title .'</label></td>';
+      $output .= '<td>'. drupal_render($form[$field]) .'</td></tr>';
+    
+  }
+  $output .= '</table></div>';
+
+  foreach (element_children($form) as $element) {
+    $output .= drupal_render($form[$element]);
+  }
+
+  return $output;
+}

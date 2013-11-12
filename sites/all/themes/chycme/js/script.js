@@ -92,4 +92,14 @@ $(document).ready(function(){
 			$('#overlay').fadeOut('fast');
 		});
 	});
+	$('#edit-panes-payment-payment-method-transferencia-wrapper').click(function(){
+	  $('#cheque_info-pane').hide();
+	});
+	$('#edit-panes-payment-payment-method-boleto-wrapper').click(function(){
+	  $('#cheque_info-pane').hide();
+	});
+	$('#edit-panes-payment-payment-method-check-wrapper').click(function(){
+	  $('#cheque_info-pane').show();
+	});
+	
 });
