@@ -1,8 +1,15 @@
 $(document).ready(function(){
 
+  /*
+		Script: Acertos de layout
+		Dev: Jefferson
+		Data: 07/11/2013
+		Obs: Jefferson fez algumas mudanças na estrutura html, para conseguir o efeito desejado.
+	*/
   $("html body.page-cart #cart-form-products table tbody tr:last-child").hide();
   $("html body.page-cart #content-content #cart-form-products #edit-items-update").wrap("<div class='wrap-edit-items-update'></div>");
 
+  
 	/*
 		Script: Slide de banners
 		Dev: Thomaz/Jefferson
@@ -93,13 +100,31 @@ $(document).ready(function(){
 		});
 	});
 	$('#edit-panes-payment-payment-method-transferencia-wrapper').click(function(){
-	  $('#cheque_info-pane').hide();
+    $('#cheque_info-pane').hide();
 	});
 	$('#edit-panes-payment-payment-method-boleto-wrapper').click(function(){
-	  $('#cheque_info-pane').hide();
+    $('#cheque_info-pane').hide();
 	});
 	$('#edit-panes-payment-payment-method-check-wrapper').click(function(){
-	  $('#cheque_info-pane').show();
+    $('#cheque_info-pane').show();
 	});
-	
+  
+  
+  /*
+		Script:
+		Dev: Jefferson
+		Data: 12/11/2013
+		Obs:
+	*/
+  $('body span.less-itens, body span.less-item').click(function(){
+    var selectorEle = $(this).parent().find(".form-text");
+    var number = parseInt(selectorEle.val(),10);
+    selectorEle.val(number <= 0 ? 0 : (number-1));
+  });
+  
+  $('body span.more-itens, body span.more-item').click(function(){
+    var selectorEle = $(this).parent().find(".form-text");
+    var number = parseInt(selectorEle.val(),10);
+    selectorEle.val(number+1);
+  });
 });

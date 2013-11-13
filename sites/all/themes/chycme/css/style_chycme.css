@@ -30,6 +30,21 @@ position:relative;
 }
 
 /*****************************************************************************************/
+/***** SPINNER GENERAL *****/
+/*****************************************************************************************/
+body span.less-itens, 
+body span.less-item,
+body span.more-itens,
+body span.more-item {
+-webkit-touch-callout:none; 
+-webkit-user-select:none; 
+-khtml-user-select:none; 
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+}
+
+/*****************************************************************************************/
 /***** ADMIN *****/
 /*****************************************************************************************/
 html body.logged-in .container-wrap {
@@ -1641,10 +1656,6 @@ width: 100%;
 }
 
 /* ------- Página: Página de Lista de Produtos ------- */
-body.page-cart {
-background: /*url("../../../../../apoio/chycme/sites/files/Layout/6 - Lista  pedidos.jpg") repeat scroll 0 55px transparent*/ #ffffff;
-}
-
 body.page-cart .content-wrap #center > .title {
 clear: both;
 display: block;
@@ -1941,6 +1952,47 @@ html body.page-cart #content-content #cart-form-buttons #edit-checkout:hover {
 background:#F9004A;
 text-decoration:underline;
 }
+
+/* ------- Página: Página Fechar Pedido ------- */
+body.page-cart {
+background: url("../../../../../apoio/chycme/sites/files/Layout/7 - Finalizar compra.jpg") repeat scroll 0 -80px rgba(0, 0, 0, 0);
+}
+
+body.page-cart #uc-cart-checkout-form {
+margin:33px 0 0 0;
+}
+
+body.page-cart #uc-cart-checkout-form fieldset {
+border:none;
+margin:0;
+padding:0;
+}
+
+body.page-cart #uc-cart-checkout-form .form-item {
+margin:0;
+padding:0;
+}
+
+body.page-cart #uc-cart-checkout-form #utilizar_endereco-pane {
+margin:0 0 0 20px;
+}
+
+body.page-cart #uc-cart-checkout-form #utilizar_endereco-pane legend {
+display:none;
+}
+
+body.page-cart #uc-cart-checkout-form #utilizar_endereco-pane .form-checkbox {
+margin:0 10px 0 0;
+}
+
+body.page-cart #uc-cart-checkout-form #delivery-pane {
+margin: 5px 0 0 37px;
+}
+
+body.page-cart #uc-cart-checkout-form #cart-pane {
+margin:52px 0 0 0;
+}
+
 /*****************************************************************************************/
 /***** FOOTER *****/
 /*****************************************************************************************/
