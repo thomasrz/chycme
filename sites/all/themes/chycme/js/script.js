@@ -139,4 +139,11 @@ $(document).ready(function(){
     var number = parseInt(selectorEle.val(),10);
     selectorEle.val(number+1);
   });
+  
+  $('#uc-cart-checkout-review-form').ready(function() {
+    if($('#uc-cart-checkout-review-form').length) {
+      $('#edit-submit').click();
+	}
+  });
+  
 });
