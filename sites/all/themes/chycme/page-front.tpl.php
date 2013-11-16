@@ -29,7 +29,7 @@
 						<?php foreach ($node->field_banners as $banner) { 
 							if (isset($banner['view']) && $banner['view']) {
 						?>
-						<li><?php print $banner['view']; ?></li>
+						<li><?php print $banner['view']; ?><div class='banner-text'><div class='banner-title'><?php if (isset($banner['data']['description'])) { print $banner['data']['description']; } ?></div><div class='banner-description'><?php if (isset($banner['data']['title'])) { print $banner['data']['title']; } ?></div></div></li>
 						<?php } } ?>
 					</ul>
 				</div>
