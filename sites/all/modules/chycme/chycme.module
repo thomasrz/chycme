@@ -8,6 +8,10 @@ function chycme_init() {
   //if ($user->uid && !(in_array('administrador', $user->roles) || $user->uid == 1) && arg(0) == 'user') {
   //  drupal_goto('produtos');
   //}
+  if ($_GET['q'] == 'cart/checkout/review') {
+	db_query("UPDATE {uc_orders} set order_status = 'pending' WHERE order_id = %d", $_SESSION['cart_order']);
+	drupal_goto ('cadastro-ok', 'order_id='. $_SESSION['cart_order']);
+  }
 }
 /*
   Data: 19 de Outubro de 2013
