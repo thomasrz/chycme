@@ -10,6 +10,33 @@ $(document).ready(function(){
   $("html body.page-cart #content-content #cart-form-products #edit-items-update").wrap("<div class='wrap-edit-items-update'></div>");
 
   
+  /*
+		Script: Acertos de layout - Página para finalizacao de compra
+		Dev: Jefferson
+		Data: 16/11/2013
+		Obs: Jefferson fez algumas mudanças na estrutura html, para conseguir o efeito desejado.
+	*/
+  /* WRAP1 */
+  $("<div class='wrap1'></div>").insertBefore("body.page-cart #uc-cart-checkout-form #payment-pane");
+  $("body.page-cart #uc-cart-checkout-form #payment-pane").prependTo($(".wrap1"));
+  
+  /* WRAP2 */
+  $("<div class='wrap2'></div>").insertAfter("body.page-cart #uc-cart-checkout-form .wrap1");
+  $("#cheque_info-pane, " +
+    "body.page-cart #uc-cart-checkout-form #edit-panes-payment-payment-method-check-wrapper").prependTo($(".wrap2"));
+  
+  /* WRAP3 */
+  $("<div class='wrap3'></div>").insertAfter("body.page-cart #uc-cart-checkout-form .wrap2");
+  $("body.page-cart #uc-cart-checkout-form #edit-panes-payment-payment-method-boleto-wrapper").prependTo($(".wrap3"));
+  
+  /* WRAP-GENERAL */
+  $("body.page-cart #uc-cart-checkout-form .wrap1," +
+    "body.page-cart #uc-cart-checkout-form .wrap2," +
+    "body.page-cart #uc-cart-checkout-form .wrap3," +
+    "body.page-cart #uc-cart-checkout-form #comments-pane," +
+    "body.page-cart #uc-cart-checkout-form #checkout-form-bottom").wrapAll("<div class='wrap-general'></div>");
+
+  
 	/*
 		Script: Slide de banners
 		Dev: Thomaz/Jefferson
