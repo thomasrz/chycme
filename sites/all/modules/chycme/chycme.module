@@ -3,12 +3,41 @@ function create_new_role() {
   db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
 }
 
+function chycme_init() {
+  //global $user;
+  //if ($user->uid && !(in_array('administrador', $user->roles) || $user->uid == 1) && arg(0) == 'user') {
+  //  drupal_goto('produtos');
+  //}
+  /*
+  print_r($_SESSION);
+  if ($_GET['q'] == 'cart/checkout/review') {
+	db_query("UPDATE {uc_orders} set order_status = 'pending' WHERE order_id = %d", $_SESSION['cart_order']);
+	unset($_SESSION['cart_order']);
+	unset($_SESSION['do_review']);
+	drupal_goto ('cadastro-ok', 'order_id='. $_SESSION['cart_order']);
+  }
+  */
+}
 /*
   Data: 19 de Outubro de 2013
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
   */
 function chycme_form_alter(&$form, &$form_state, $form_id) {
+  
+  if ($form_id == 'user_register') {
+	$form['Informações pessoais']['profile_clientes_tipo']['#type'] = 'radios';
+	$form['Informações pessoais']['profile_clientes_tipo']['#default_value'] = 'Pessoa Física';
+	$form['Informações pessoais']['profile_clientes_tipo']['#options'] = array (
+	  'Pessoa Física' => 'Pessoa Física',
+      'Pessoa Jurídica' => 'Pessoa Jurídica'
+	);
+	$form['Informações pessoais']['#attributes']['class'][] = 'info-pessoais';
+	$form['account']['mail']['#description'] = '';
+  }
   if ($form_id == 'uc_cart_checkout_form') {
+    /*print '<pre>';
+	print_r($form);
+	print '</pre>'; */
 	$form['panes']['cart']['#title'] = 'Seu Pedido';
 	/*$form['adicionar_endereco'] = array(
 	  'format' => 'Adicionar endereço',
@@ -213,7 +242,7 @@ function chycme_pane_utilizar_endereco($op, &$arg1, $arg2) {
 	  $contents['utilizar_endereco'] = array(
           '#type' => 'checkbox',
           '#title' => 'Enviar para o endereço já cadastrado',
-          '#options' => array('1' => 'Enviar para o endereço já cadastrado')
+          //'#options' => array('0' => 'Novo cadastro', '1' => 'Enviar para o endereço já cadastrado')
       );
       return array('description' => $description, 'contents' => $contents, 'theme' => 'theme_utilizar_endereco_pane');
 

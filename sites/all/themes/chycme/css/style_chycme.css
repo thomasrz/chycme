@@ -2664,6 +2664,19 @@ width: 26px;
 outline:none;
 }
 
+body.page-user .content-wrap #center #user-register #edit-profile-clientes-tipo-Pessoa-Física-wrapper label {
+  display: block;
+  margin-right: 100px;
+  float: left;
+}
+body.page-user .content-wrap #center #user-register #edit-profile-clientes-tipo-Pessoa-Jurídica-wrapper label {
+  display: block;
+}
+
+body.page-user .content-wrap #center #user-register #edit-profile-clientes-cnpj-wrapper {
+  display: none;
+}
+
 /* COPYRIGHT */
 .footer-wrap .footer-bottom {
 clear: both;

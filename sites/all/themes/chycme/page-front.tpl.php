@@ -29,7 +29,7 @@
 						<?php foreach ($node->field_banners as $banner) { 
 							if (isset($banner['view']) && $banner['view']) {
 						?>
-						<li><?php print $banner['view']; ?></li>
+						<li><?php print $banner['view']; ?><div class='banner-text'><div class='banner-title'><?php if (isset($banner['data']['description'])) { print $banner['data']['description']; } ?></div><div class='banner-description'><?php if (isset($banner['data']['title'])) { print $banner['data']['title']; } ?></div></div></li>
 						<?php } } ?>
 					</ul>
 				</div>
@@ -64,7 +64,13 @@
 						<div class="center-content">
 							<?php print $content_home; ?>
 							<div class='bt-todos-produtos'>
-								<a href='<?php print url('produtos/4');?>' title="Clique e veja todos os produtos">Clique e veja todos os produtos</a>
+								<a href='<?php 
+								if ($user->uid) { 
+								  $url = url('produtos'); 
+								} else {
+								  $url = url('user/register');
+								}
+								print $url; ?>' title="Clique e veja todos os produtos">Clique e veja todos os produtos</a>
 							</div>
 						</div>
 						<?php print $feed_icons ?>

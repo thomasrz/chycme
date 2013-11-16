@@ -135,6 +135,18 @@ $(document).ready(function(){
 	$('#edit-panes-payment-payment-method-check-wrapper').click(function(){
     $('#cheque_info-pane').show();
 	});
+	
+	$("input[name='profile_clientes_tipo']").click(function() {
+	  if (this.value == 'Pessoa Jurídica') {
+	    $('#edit-profile-clientes-cnpj-wrapper').show();
+	    $('#edit-profile-clientes-cpf-wrapper').hide();
+	  }
+	  else {
+	    $('#edit-profile-clientes-cnpj-wrapper').hide();
+	    $('#edit-profile-clientes-cpf-wrapper').show();
+	  }
+	});
+
   
   
   /*
@@ -154,4 +166,11 @@ $(document).ready(function(){
     var number = parseInt(selectorEle.val(),10);
     selectorEle.val(number+1);
   });
+  
+  $('#uc-cart-checkout-review-form').ready(function() {
+    if($('#uc-cart-checkout-review-form').length) {
+      $('#edit-submit').click();
+	}
+  });
+  
 });

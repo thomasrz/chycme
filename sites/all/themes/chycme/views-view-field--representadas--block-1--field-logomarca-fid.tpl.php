@@ -26,7 +26,13 @@ $query = db_query("SELECT nid FROM {content_type_product} WHERE field_produto_re
 while ($produtos = db_fetch_array($query)) {
   $product_node = node_load($produtos['nid']);
   ?>
-  <a href="<?php print url('user');?>" class="product-box product-<?php print $product_node->nid; ?>">
+  <a href="<?php 
+								if ($user->uid) { 
+								  $url = url('produtos'); 
+								} else {
+								  $url = url('user/register');
+								}
+								print $url; ?>" class="product-box product-<?php print $product_node->nid; ?>">
 	  <div>
 		<div class='product-image'><img src="<?php print url($product_node->field_image_cache[0]['filepath']); ?>"></img></div>
 		<div class='product-title'><?php print $product_node->title; ?></div>
