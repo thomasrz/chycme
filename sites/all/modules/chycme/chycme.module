@@ -3,6 +3,12 @@ function create_new_role() {
   db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
 }
 
+function chycme_init() {
+  //global $user;
+  //if ($user->uid && !(in_array('administrador', $user->roles) || $user->uid == 1) && arg(0) == 'user') {
+  //  drupal_goto('produtos');
+  //}
+}
 /*
   Data: 19 de Outubro de 2013
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
