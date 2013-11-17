@@ -95,3 +95,7 @@ table.product-list {
 .add-feature label {
   display: inline;
 }
+
+#edit-list-price-wrapper, #edit-cost-wrapper, #edit-shippable-wrapper, #edit-pkg-qty-wrapper, #edit-default-qty-wrapper, #edit-ordering-wrapper {
+  display: none;
+}

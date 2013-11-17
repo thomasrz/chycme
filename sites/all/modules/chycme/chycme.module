@@ -1,5 +1,5 @@
 <?php
-function create_new_role() {
+function create_new_role($role_name) {
   db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
 }
 
@@ -23,8 +23,23 @@ function chycme_init() {
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
   */
 function chycme_form_alter(&$form, &$form_state, $form_id) {
-  
+  if ($form_id == 'user_login') {
+    $form['name']['#description'] = 'Digite o e-mail da sua conta';
+	$form['pass']['#description'] = 'Digite a senha da conta';
+  }  
+  if ($form_id == 'user_profile_form') {
+    
+    $form['nodewords']['#attributes']['style'] = 'display: none';
+	$form['locale']['#attributes']['style'] = 'display: none';
+	$form['timezone']['#attributes']['style'] = 'display: none';
+	$form['uc_roles']['#attributes']['style'] = 'display: none';
+	
+	$form['theme_select']['themes']['#attributes']['style'] = 'display: none';
+	
+	
+  }  
   if ($form_id == 'user_register') {
+    
 	$form['Informações pessoais']['profile_clientes_tipo']['#type'] = 'radios';
 	$form['Informações pessoais']['profile_clientes_tipo']['#default_value'] = 'Pessoa Física';
 	$form['Informações pessoais']['profile_clientes_tipo']['#options'] = array (
@@ -34,17 +49,13 @@ function chycme_form_alter(&$form, &$form_state, $form_id) {
 	$form['Informações pessoais']['#attributes']['class'][] = 'info-pessoais';
 	$form['account']['mail']['#description'] = '';
   }
-  if ($form_id == 'uc_cart_checkout_form') {
-    /*print '<pre>';
-	print_r($form);
-	print '</pre>'; */
+  if ($form_id == 'uc_cart_checkout_form') { 
 	$form['panes']['cart']['#title'] = 'Seu Pedido';
+	unset($form['panes']['payment']['payment_method']['#attributes']['onclick']);
 	/*$form['adicionar_endereco'] = array(
 	  'format' => 'Adicionar endereço',
 	); 
-	print '<pre>';
-	print_r($form);
-	print '</pre>';
+	 
 	$form['panes']['enviar_para_endereco'] = array(
       '#type' => 'checkbox',
       '#title' => 'Enviar para o endereço já cadastrado',
