@@ -26,6 +26,8 @@ foreach ($fields as $id => $field): ?>
   <?php if ($field->class == 'title-1'){ 
     $product_box_id = url('node/'. $row->nid);
 	$product_box_id = str_replace('/','-', $product_box_id);
+	$product_box_id = str_replace('index.php','', $product_box_id);
+	$product_box_id = str_replace('?q=','', $product_box_id);
   ?>
     <div class='product-box <?php print 'product-box-'. $product_box_id;?>'><a class="boxclose" id="boxclose"></a>
   <?php } ?>

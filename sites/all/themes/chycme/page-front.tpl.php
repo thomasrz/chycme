@@ -42,7 +42,7 @@
 						if (isset($node->field_logomarca['0']['filepath'])) {
 					?>
 					<div class="title">
-						<img src="<?php print url($node->field_logomarca['0']['filepath']); ?>"></img>
+						<img src="<?php print '/'. $node->field_logomarca['0']['filepath']; ?>"></img>
 					</div>
 					<?php } else { ?>
 						<div class="title">
