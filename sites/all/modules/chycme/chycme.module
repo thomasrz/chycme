@@ -23,6 +23,9 @@ function chycme_init() {
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
   */
 function chycme_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_pass') {
+	$form['name']['#description'] = '';
+  }  
   if ($form_id == 'user_login') {
     $form['name']['#description'] = 'Digite o e-mail da sua conta';
 	$form['pass']['#description'] = 'Digite a senha da conta';
