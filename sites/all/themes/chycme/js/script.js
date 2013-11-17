@@ -16,6 +16,12 @@ $(document).ready(function(){
 		Data: 16/11/2013
 		Obs: Jefferson fez algumas mudanças na estrutura html, para conseguir o efeito desejado.
 	*/
+  /* adicionar endereco */
+  $(".address-pane-table table tr").each(function (index, value){
+    $(this).replaceWith("<div class='row'>" + $(this).html() + "</div>");
+  });
+  $(".address-pane-table table").replaceWith("<div class='table'>" + $(".address-pane-table table").html() + "</div>");
+  
   /* WRAP1 */
   $("<div class='wrap1'></div>").insertBefore("body.page-cart #uc-cart-checkout-form #payment-pane");
   $("body.page-cart #uc-cart-checkout-form #payment-pane").prependTo($(".wrap1"));
