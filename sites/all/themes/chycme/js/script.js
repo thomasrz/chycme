@@ -112,6 +112,7 @@ $(document).ready(function(){
 	$('.activator').click(function(){
 		box = $(this).parent().parent().parent();
 		product_id = $(this).attr('href');
+		product_id = product_id.replace('index.php?q=', '');
 		product_id = product_id.replace(/\//g,"-"); //regex to replace / to -
 		$('#overlay').fadeIn('fast',function(){
 			box.find('.product-box-'+product_id).show().animate({'top':'20px'},500);
@@ -141,25 +142,34 @@ $(document).ready(function(){
 		Obs:
 	*/
 	$('#edit-panes-payment-payment-method-transferencia-wrapper').click(function(){
-    $('#cheque_info-pane').hide();
+	  //return false;
+      //$('#cheque_info-pane').hide();
 	});
 	$('#edit-panes-payment-payment-method-boleto-wrapper').click(function(){
-    $('#cheque_info-pane').hide();
+	  //return false;
+      //$('#cheque_info-pane').hide();
 	});
 	$('#edit-panes-payment-payment-method-check-wrapper').click(function(){
-    $('#cheque_info-pane').show();
+	  //return false;
+      //$('#cheque_info-pane').show();
 	});
 	
-  $("input[name='profile_clientes_tipo']").click(function() {
-    if (this.value == 'Pessoa Jurídica') {
-      $('#edit-profile-clientes-cnpj-wrapper').show();
-      $('#edit-profile-clientes-cpf-wrapper').hide();
-    }
-    else {
-      $('#edit-profile-clientes-cnpj-wrapper').hide();
-      $('#edit-profile-clientes-cpf-wrapper').show();
-    }
-  });
+	$("input[name='profile_clientes_tipo']").click(function() {
+	  if (this.value == 'Pessoa Jurídica') {
+	    $('#edit-profile-clientes-cnpj-wrapper').show();
+	    $('#edit-profile-clientes-cpf-wrapper').hide();
+		var value = $('#edit-profile-clientes-data-wrapper label').html();
+        value = value.replace('Data Nasc.', 'Fundação'); 
+		$("#edit-profile-clientes-data-wrapper label").html(value);
+	  }
+	  else {
+	    $('#edit-profile-clientes-cnpj-wrapper').hide();
+	    $('#edit-profile-clientes-cpf-wrapper').show();
+		var value = $('#edit-profile-clientes-data-wrapper label').html();
+        value = value.replace('Fundação', 'Data Nasc.'); 
+		$("#edit-profile-clientes-data-wrapper label").html(value);
+	  }
+	});
   
   $('#uc-cart-checkout-review-form').ready(function() {
     if($('#uc-cart-checkout-review-form').length) {
