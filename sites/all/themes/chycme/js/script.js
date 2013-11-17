@@ -105,6 +105,7 @@ $(document).ready(function(){
 	$('.activator').click(function(){
 		box = $(this).parent().parent().parent();
 		product_id = $(this).attr('href');
+		product_id = product_id.replace('index.php?q=', '');
 		product_id = product_id.replace(/\//g,"-"); //regex to replace / to -
 		$('#overlay').fadeIn('fast',function(){
 			box.find('.product-box-'+product_id).show().animate({'top':'20px'},500);
