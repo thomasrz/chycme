@@ -2849,3 +2849,7 @@ text-indent: 36px;
 word-spacing: -1px;
 color:#777;
 }
+
+.page-user .messages.error {
+  display:block;
+}
