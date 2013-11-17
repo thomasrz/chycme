@@ -108,7 +108,14 @@ $(document).ready(function(){
 	placeholdDrupalInput($("#user-register input.form-text"));
 	placeholdDrupalInput($("#user-login input.form-text"));
 	placeholdDrupalInput($("#user-pass input.form-text"));
-
+    
+	/* 
+	  Script:
+	  Dev: Thomaz/Jefferson
+	  Data: 17/11/2013
+	*/
+	placeholdDrupalInput($("#edit-submitted-seu-email"));
+	
 	/*
 		Script:
 		Dev: Thomaz/Jefferson
