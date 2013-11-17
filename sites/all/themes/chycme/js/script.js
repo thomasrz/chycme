@@ -24,6 +24,9 @@ $(document).ready(function(){
   $("<div class='wrap2'></div>").insertAfter("body.page-cart #uc-cart-checkout-form .wrap1");
   $("#cheque_info-pane, " +
     "body.page-cart #uc-cart-checkout-form #edit-panes-payment-payment-method-check-wrapper").prependTo($(".wrap2"));
+  //Mascara de telefone
+  $("body.page-cart #uc-cart-checkout-form" +
+    "#edit-panes-cheque-info-cheque-info-telefone").mask("(99)9?9999-9999");
   
   /* WRAP3 */
   $("<div class='wrap3'></div>").insertAfter("body.page-cart #uc-cart-checkout-form .wrap2");
@@ -89,8 +92,12 @@ $(document).ready(function(){
 			});
 	}
 	
-	$("body.page-user #user-register #edit-profile-clientes-telefone").mask("(99)9999-9999");
+	$("body.page-user #user-register #edit-profile-clientes-telefone, " +
+    "body.page-user #user-register #edit-profile-ref-pessoais-telefone1, " + 
+    "body.page-user #user-register #edit-profile-ref-pessoais-telefone2, " + 
+    "body.page-user #user-register #edit-profile-ref-pessoais-telefone3").mask("(99)9999-9999");
 	$("body.page-user #user-register #edit-profile-clientes-celular").mask("(99)9?9999-9999");
+  $("body.page-user #user-register #edit-profile-cliente-cep").mask("99.999-999");
 	
 	placeholdDrupalInput($("#user-register input.form-text"));
 	placeholdDrupalInput($("#user-login input.form-text"));
@@ -126,6 +133,13 @@ $(document).ready(function(){
 			$('#overlay').fadeOut('fast');
 		});
 	});
+  
+  /*
+		Script:
+		Dev: Thomaz
+		Data: 17/10/2013
+		Obs:
+	*/
 	$('#edit-panes-payment-payment-method-transferencia-wrapper').click(function(){
     $('#cheque_info-pane').hide();
 	});
@@ -136,24 +150,29 @@ $(document).ready(function(){
     $('#cheque_info-pane').show();
 	});
 	
-	$("input[name='profile_clientes_tipo']").click(function() {
-	  if (this.value == 'Pessoa Jurídica') {
-	    $('#edit-profile-clientes-cnpj-wrapper').show();
-	    $('#edit-profile-clientes-cpf-wrapper').hide();
-	  }
-	  else {
-	    $('#edit-profile-clientes-cnpj-wrapper').hide();
-	    $('#edit-profile-clientes-cpf-wrapper').show();
-	  }
-	});
+  $("input[name='profile_clientes_tipo']").click(function() {
+    if (this.value == 'Pessoa Jurídica') {
+      $('#edit-profile-clientes-cnpj-wrapper').show();
+      $('#edit-profile-clientes-cpf-wrapper').hide();
+    }
+    else {
+      $('#edit-profile-clientes-cnpj-wrapper').hide();
+      $('#edit-profile-clientes-cpf-wrapper').show();
+    }
+  });
+  
+  $('#uc-cart-checkout-review-form').ready(function() {
+    if($('#uc-cart-checkout-review-form').length) {
+      $('#edit-submit').click();
+    }
+  });
 
   
-  
   /*
-		Script:
+		Script: Spinner
 		Dev: Jefferson
 		Data: 12/11/2013
-		Obs:
+		Obs: Aumentar e diminuir valor no input
 	*/
   $('body span.less-itens, body span.less-item').click(function(){
     var selectorEle = $(this).parent().find(".form-text");
@@ -165,12 +184,6 @@ $(document).ready(function(){
     var selectorEle = $(this).parent().find(".form-text");
     var number = parseInt(selectorEle.val(),10);
     selectorEle.val(number+1);
-  });
-  
-  $('#uc-cart-checkout-review-form').ready(function() {
-    if($('#uc-cart-checkout-review-form').length) {
-      $('#edit-submit').click();
-	}
   });
   
 });
