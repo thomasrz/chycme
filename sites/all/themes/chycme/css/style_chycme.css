@@ -2794,9 +2794,13 @@ display:none;
 .footer-wrap .footer-right #block-webform-client-block-7 input.form-email {
 background: #FAFAFA;
 border: 1px solid #E4E4E4;
-border-radius: 14px;
 -webkit-border-radius: 14px;
 -moz-border-radius: 14px;
+border-radius: 14px;
+-webkit-box-shadow:none!important;
+-moz-box-shadow:none!important;
+box-shadow:none!important;
+color: #666666;
 height: 28px;
 line-height: 28px;
 margin: 0 0 41px;
