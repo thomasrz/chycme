@@ -106,6 +106,9 @@
 						<?php print $footer_right; ?>
 					</div>
 					<div class="footer-bottom">
+            <div class="tel-cnpj">
+              CNPJ: 19.048.913/0001-06 | (11) 3926-6765 
+            </div>
 						<div class="copyright">
 							Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
 						</div>

@@ -1072,14 +1072,24 @@ width: 200px;
 }
 
 body.page-user .content-wrap #center #user-register #edit-submit {
-background: FAFAFA;
+/*background: FAFAFA;
 border: 1px solid #E4E4E4;
 border-radius: 15px 15px 15px 15px;
 color: #9C3082;
 display: block;
 height: 30px;
 line-height: 30px;
-padding: 0 10px;
+padding: 0 10px;*/
+background: #9C3082;
+border: medium none;
+color: #FFFFFF;
+cursor: pointer;
+margin: 0 0 0 6px;
+padding: 9px 15px;
+}
+
+body.page-user .content-wrap #center #user-register #edit-submit:hover {
+background: #BC53A3;
 }
 
 /* ------- Página: Recuperar senha ------- */
@@ -2718,6 +2728,10 @@ body.page-title-class-como-funciona .como-funciona > li > .como-funciona-descrip
 font-size: 15px;
 }
 
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description b {
+font-weight:700;
+}
+
 /*****************************************************************************************/
 /***** FOOTER *****/
 /*****************************************************************************************/
@@ -3072,6 +3086,15 @@ text-align: center;
 text-indent: 36px;
 word-spacing: -1px;
 color:#777;
+}
+
+.footer-wrap .footer-bottom .tel-cnpj {
+float: left;
+}
+
+.footer-wrap .footer-bottom .copyright {
+float: left;
+margin: 0 0 0 115px;
 }
 
 .page-user .messages.error {
