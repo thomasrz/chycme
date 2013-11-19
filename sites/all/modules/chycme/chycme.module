@@ -43,13 +43,13 @@ function chycme_form_alter(&$form, &$form_state, $form_id) {
   }  
   if ($form_id == 'user_register') {
     
-	$form['Informações pessoais']['profile_clientes_tipo']['#type'] = 'radios';
-	$form['Informações pessoais']['profile_clientes_tipo']['#default_value'] = 'Pessoa Física';
-	$form['Informações pessoais']['profile_clientes_tipo']['#options'] = array (
+	$form['Informações Pessoais']['profile_clientes_tipo']['#type'] = 'radios';
+	$form['Informações Pessoais']['profile_clientes_tipo']['#default_value'] = 'Pessoa Física';
+	$form['Informações Pessoais']['profile_clientes_tipo']['#options'] = array (
 	  'Pessoa Física' => 'Pessoa Física',
       'Pessoa Jurídica' => 'Pessoa Jurídica'
 	);
-	$form['Informações pessoais']['#attributes']['class'][] = 'info-pessoais';
+	$form['Informações Pessoais']['#attributes']['class'][] = 'info-pessoais';
 	$form['account']['mail']['#description'] = '';
   }
   if ($form_id == 'uc_cart_checkout_form') { 
