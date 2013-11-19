@@ -3,7 +3,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
 	<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" ></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
 		<?php print $head ?>
 		<title><?php print $head_title ?></title>
 		<!--[if lt IE 9]>
