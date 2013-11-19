@@ -22,7 +22,7 @@
 
 <div class="representada-box representada-<?php print $row->nid; ?>">
 <?php 
-$query = db_query("SELECT nid FROM {content_type_product} WHERE field_produto_representada_nid = '". $row->nid ."' LIMIT 4");
+$query = db_query("SELECT nid FROM {content_type_product} WHERE field_produto_representada_nid = '". $row->nid ."' and field_produto_home_value = 1 LIMIT 4");
 while ($produtos = db_fetch_array($query)) {
   $product_node = node_load($produtos['nid']);
   ?>
