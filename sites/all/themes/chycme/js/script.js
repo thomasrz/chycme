@@ -74,7 +74,8 @@ $(document).ready(function(){
 	*/
 	$("#slider").easySlider({
 		auto: true, 
-		continuous: true
+		continuous: true,
+    pause: 8000
 	});
 
 	
