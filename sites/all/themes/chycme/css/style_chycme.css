@@ -507,6 +507,9 @@ width: 1900px;
 
 .slider-wrap li img {
 width:1900px;
+height:700px;
+display:block;
+float:left;
 }
 
 .slider-wrap li .banner-text {
@@ -2637,6 +2640,82 @@ width: 336px;
 body.page-cart #uc-cart-checkout-form .wrap-general #checkout-form-bottom #edit-continue.form-submit:hover {
 background: none repeat scroll 0 0 #F9004A;
 text-decoration: underline;
+}
+
+/*****************************************************************************************/
+/***** Página "Como Funciona" *****/
+/*****************************************************************************************/
+body.page-title-class-como-funciona #center > .title {
+clear: both;
+display: block;
+height: 136px;
+width: 1050px;
+}
+
+body.page-title-class-como-funciona #center > .title > h2 {
+border-bottom: 3px solid #9c3082;
+display: block;
+float: left;
+font-size: 22px;
+font-weight: 700;
+height: 43px;
+letter-spacing: 1px;
+margin: 0 0 60px;
+padding: 30px 115px 0 20px;
+text-align: center;
+}
+
+body.page-title-class-como-funciona #center > .title > .beforeTitle {
+border-bottom: 1px solid #e4e4e4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 105px;
+}
+
+body.page-title-class-como-funciona #center > .title > .afterTitle {
+border-bottom: 1px solid #e4e4e4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 630px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li {
+border: 1px solid #CCCCCC;
+clear: both;
+font-size: 24px;
+height: 60px;
+margin: 0 0 30px 70px;
+padding: 37px 0 0;
+position: relative;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-image {
+height: 97px;
+margin: 0 30px 0 0;
+overflow: hidden;
+position: absolute;
+top: 0;
+width: 114px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description {
+height: 33px;
+line-height: 17px;
+margin: 32px 0;
+overflow: hidden;
+position: absolute;
+right: 0;
+top: 0;
+width: 815px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description,
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description b {
+font-size: 15px;
 }
 
 /*****************************************************************************************/

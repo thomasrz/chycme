@@ -23,7 +23,7 @@
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
   </head>
-  <body<?php print phptemplate_body_class($left, $right); ?>>
+  <body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?> page-node-id-<?php print $node->nid; ?> page-title-class-<?php print $node->path; ?>">
 
 <!-- Layout -->
   <div id="header-region" class="clear-block"><?php print $header; ?></div>
