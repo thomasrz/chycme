@@ -48,6 +48,9 @@ $(document).ready(function(){
     "body.page-cart #uc-cart-checkout-form .wrap3," +
     "body.page-cart #uc-cart-checkout-form #comments-pane," +
     "body.page-cart #uc-cart-checkout-form #checkout-form-bottom").wrapAll("<div class='wrap-general'></div>");
+    
+  $("body.page-cart #uc-cart-checkout-form .wrap-general #checkout-form-bottom #edit-continue.form-submit")
+    .val("Finalizar pedido!");
   
   $("body.page-cart #uc-cart-checkout-form #comments-pane textarea")
     .val($("body.page-cart #uc-cart-checkout-form #comments-pane .description").text());

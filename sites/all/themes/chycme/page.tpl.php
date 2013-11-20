@@ -12,7 +12,7 @@
 		<?php print $styles ?>
 		<?php print $scripts ?>
 	</head>
-	<body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?> page-node-id-<?php print $node->nid; ?>">
+	<body <?php print phptemplate_body_class($left, $right); ?> class="<?php print $body_classes; ?> page-node-id-<?php print $node->nid; ?> page-title-class-<?php print $node->path; ?>">
 		<div class="container-wrap">
 			<div class="header-wrap">
 				<header class="header container-box" class="outerbox clearfix">
@@ -106,6 +106,9 @@
 						<?php print $footer_right; ?>
 					</div>
 					<div class="footer-bottom">
+            <div class="tel-cnpj">
+              CNPJ: 19.048.913/0001-06 | (11) 3926-6765 
+            </div>
 						<div class="copyright">
 							Chyc.me <?php print date('Y'); ?>. Todos os direitos reservados.
 						</div>

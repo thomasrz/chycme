@@ -147,8 +147,8 @@ height: 117px;
 .header-wrap #block-block-2 {
 float: left;
 height: 42px;
-margin: 0 0 0 104px;
-width: 106px;
+margin: 0 0 0 103px;
+width: 107px;
 }
 
 .header-wrap #block-block-2 .telefone {
@@ -507,6 +507,9 @@ width: 1900px;
 
 .slider-wrap li img {
 width:1900px;
+height:700px;
+display:block;
+float:left;
 }
 
 .slider-wrap li .banner-text {
@@ -1069,14 +1072,24 @@ width: 200px;
 }
 
 body.page-user .content-wrap #center #user-register #edit-submit {
-background: FAFAFA;
+/*background: FAFAFA;
 border: 1px solid #E4E4E4;
 border-radius: 15px 15px 15px 15px;
 color: #9C3082;
 display: block;
 height: 30px;
 line-height: 30px;
-padding: 0 10px;
+padding: 0 10px;*/
+background: #9C3082;
+border: medium none;
+color: #FFFFFF;
+cursor: pointer;
+margin: 0 0 0 6px;
+padding: 9px 15px;
+}
+
+body.page-user .content-wrap #center #user-register #edit-submit:hover {
+background: #BC53A3;
 }
 
 /* ------- Página: Recuperar senha ------- */
@@ -2640,6 +2653,86 @@ text-decoration: underline;
 }
 
 /*****************************************************************************************/
+/***** Página "Como Funciona" *****/
+/*****************************************************************************************/
+body.page-title-class-como-funciona #center > .title {
+clear: both;
+display: block;
+height: 136px;
+width: 1050px;
+}
+
+body.page-title-class-como-funciona #center > .title > h2 {
+border-bottom: 3px solid #9c3082;
+display: block;
+float: left;
+font-size: 22px;
+font-weight: 700;
+height: 43px;
+letter-spacing: 1px;
+margin: 0 0 60px;
+padding: 30px 115px 0 20px;
+text-align: center;
+}
+
+body.page-title-class-como-funciona #center > .title > .beforeTitle {
+border-bottom: 1px solid #e4e4e4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 105px;
+}
+
+body.page-title-class-como-funciona #center > .title > .afterTitle {
+border-bottom: 1px solid #e4e4e4;
+display: block;
+float: left;
+height: 43px;
+padding: 31px 0 0;
+width: 630px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li {
+border: 1px solid #CCCCCC;
+clear: both;
+font-size: 24px;
+height: 60px;
+margin: 0 0 30px 70px;
+padding: 37px 0 0;
+position: relative;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-image {
+height: 97px;
+margin: 0 30px 0 0;
+overflow: hidden;
+position: absolute;
+top: 0;
+width: 114px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description {
+height: 33px;
+line-height: 17px;
+margin: 32px 0;
+overflow: hidden;
+position: absolute;
+right: 0;
+top: 0;
+width: 815px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description,
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description b {
+font-size: 15px;
+}
+
+body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description b {
+font-weight:700;
+}
+
+/*****************************************************************************************/
 /***** FOOTER *****/
 /*****************************************************************************************/
 .footer-wrap {
@@ -2993,6 +3086,15 @@ text-align: center;
 text-indent: 36px;
 word-spacing: -1px;
 color:#777;
+}
+
+.footer-wrap .footer-bottom .tel-cnpj {
+float: left;
+}
+
+.footer-wrap .footer-bottom .copyright {
+float: left;
+margin: 0 0 0 115px;
 }
 
 .page-user .messages.error {
