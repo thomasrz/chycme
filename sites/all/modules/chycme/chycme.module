@@ -1,6 +1,13 @@
 <?php
 function create_new_role($role_name) {
-  db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
+  $result = db_query("SELECT * FROM {role} WHERE name = %s", $role_name);
+  $no_results = TRUE;
+  while ($row = db_fetch_array($result)) {
+    $no_results = FALSE;
+  }
+  if ($no_results) {
+    db_query("INSERT INTO {role} (name) VALUES ('%s')", $role_name);
+  }
 }
 
 function chycme_init() {
@@ -23,6 +30,9 @@ function chycme_init() {
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
   */
 function chycme_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'representada_node_form') {
+	$form['#submit'][] = 'chycme_add_relacionadas_role';
+  }
   if ($form_id == 'user_pass') {
 	$form['name']['#description'] = '';
   }  
@@ -71,6 +81,11 @@ function chycme_form_alter(&$form, &$form_state, $form_id) {
 	$form['panes']['comments']['#description'] = 'Notas sobre o seu pedido (por exemplo, informações especiais sobre a entrega)';
 	$form['#submit'][] = 'chycme_cheque_info_checkout';
   }
+}
+
+function chycme_add_relacionadas_role($form, &$form_state) {
+  $role_name = $form_state['values']['title'];
+  create_new_role($role_name);
 }
 
 /**
