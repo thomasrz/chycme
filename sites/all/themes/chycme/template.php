@@ -49,7 +49,6 @@ function phptemplate_preprocess_page(&$vars) {
   if (isset($vars['node'])) {
     // Add template naming suggestion. It should alway use hyphens.
     $vars['template_files'][] = 'page-'. str_replace('_', '-', $vars['node']->type);
-	$vars['template_files'][] = 'page-'. strtolower(str_replace('_', '-', $vars['node']->title));
   }
   
 }

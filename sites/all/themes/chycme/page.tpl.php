@@ -24,9 +24,6 @@
 					<?php print $header; ?>
 				</header>
 			</div>
-			<div class="banner-wrap">
-				<div id="banner"></div>
-			</div>
 			<div class="content-wrap">
 				<div class="content container-box">
 					<?php if (arg(0) == 'produtos') {
