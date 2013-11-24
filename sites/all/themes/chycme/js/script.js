@@ -36,6 +36,7 @@ $(document).ready(function(){
   //Mascara de telefone
   $("body.page-cart #uc-cart-checkout-form" +
     "#edit-panes-cheque-info-cheque-info-telefone").mask("(99)9?9999-9999");
+  	
   
   /* WRAP3 */
   $("<div class='wrap3'></div>").insertAfter("body.page-cart #uc-cart-checkout-form .wrap2");
@@ -132,7 +133,13 @@ $(document).ready(function(){
 	placeholdDrupalInput($("#user-register input.form-text"));
 	placeholdDrupalInput($("#user-login input.form-text"));
 	placeholdDrupalInput($("#user-pass input.form-text"));
-    
+    placeholdDrupalInput($("#edit-submitted-email"));
+	placeholdDrupalInput($(".page-title-class-contato #edit-submitted-nome"));
+	placeholdDrupalInput($(".page-title-class-contato #edit-submitted-email"));
+	placeholdDrupalInput($(".page-title-class-contato #edit-submitted-cidade"));
+	$("body.page-title-class-contato #edit-submitted-telefone").mask("(99)9?9999-9999");
+	placeholdDrupalInput($(".page-title-class-contato #edit-submitted-telefone"));
+	
 	/* 
 	  Script:
 	  Dev: Thomaz/Jefferson

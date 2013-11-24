@@ -29,27 +29,7 @@
 			</div>
 			<div class="content-wrap">
 				<div class="content container-box">
-					<?php if (arg(0) == 'produtos') {
-						$node = node_load(arg(1));
-						if (isset($node->field_logomarca['0']['filepath'])) { ?>
-							<div class="title">
-								<div class="beforeTitle"></div>
-								<img src="<?php print '/'. $node->field_logomarca['0']['filepath']; ?>"></img>
-								<div class="afterTitle"></div>
-							</div>
-						<?php } else { ?>
-							<div class="title">
-								<div class="beforeTitle"></div>
-								<h2><?php print $title; ?></h2>
-								<div class="afterTitle specialAfterTitle"></div>
-							</div>
-					<?php } } else if (arg(0) == 'catalog') { ?>
-						<div class="title">
-							<div class="beforeTitle"></div>
-							<h2><?php print $title; ?></h2>
-							<div class="afterTitle"></div>
-						</div>
-					<?php } ?>
+					
 			
 					<?php if ($sidebar_left): ?>
 						<div id="sidebar-left" class="sidebar">
@@ -65,31 +45,24 @@
 					<?php endif; ?>
 					
 					<div id="center">					  
-						<?php if ($title && arg(0) != 'produtos' && arg(0) != 'catalog'): ?>
-              <div class="title">
-                <div class="beforeTitle"></div>
-                  <h2><?php print $title; ?></h2>
-                <div class="afterTitle"></div>
-              </div>
+						<?php if ($title && arg(0) != 'produtos'): ?>
+							<div class="beforeTitle"></div>
+								<h2><?php print $title; ?></h2>
+							<div class="afterTitle"></div>
 						<?php endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php if (!empty($help)): print $help; endif; ?>
-						<?php if (isset($node->field_como_funciona)) { ?>
-						<ol class='como-funciona'>
-						<?php foreach ($node->field_como_funciona as $key => $value) { 
-						?>
-						  <li>
-						    <div class='como-funciona-image'><img src="<?php print '/'. $value['filepath']; ?>" alt="<?php print $value['data']['alt']; ?>" /></div>
-						    <div class='como-funciona-description'><?php print $value['data']['description']; ?></div>						
-						  </li>
-						<?php } ?>
-						</ol>
-						<?php } ?>
 						<div id="content-content" class="clear-block">
-							<?php print $content; ?>
+							 <?php print $node->content['webform']['#value']; ?> 
+							 <?php //print_r($node->content); ?>
+							 <div id="right">
+					           <?php print $node->content['body']['#value']; ?> 
+					         <div>
 						</div>
+						
 						<?php print $feed_icons; ?>
 					</div>
+					
 				</div>
 			</div>
 			<div class="footer-wrap">

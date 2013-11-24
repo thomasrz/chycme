@@ -30,6 +30,36 @@ function chycme_init() {
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
   */
 function chycme_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'uc_order_edit_form') {
+    /*
+	$order = uc_order_load($form['order_id']['#value']); 
+    //print '<pre>';
+    //print_r ($form);
+	//$form['cheque_info']
+
+   $header = array('Nome','CPF/CNPJ','Num cheque','banco', 'agencia', 'num conta','telefone', 'cliente desde'); 
+	if ($order->payment_method == 'check') {
+	  $rows = array(array(
+	    $order->cheque_info_nome_completo, 
+        $order->cheque_info_cpf_cnpj, 
+        $order->cheque_info_num_cheque, 
+        $order->cheque_info_banco, 
+        $order->cheque_info_agencia, 
+        $order->cheque_info_num_conta, 
+        $order->cheque_info_telefone, 
+        $order->cheque_info_cliente_desde
+	  ));
+	}
+	//print $order->cheque_info_nome_completo;
+	//
+	$html = theme_table($header, $rows);
+	$form['customer']['cheque_info'] = array('#type' => 'markup', '#value' => $html);
+	
+	print '<pre>';
+	print_r ($form);
+	print '</pre>';
+	*/
+  }
   if ($form_id == 'representada_node_form') {
 	$form['#submit'][] = 'chycme_add_relacionadas_role';
   }
@@ -208,7 +238,6 @@ function chycme_checkout_pane() {
  */
 function chycme_pane_cheque_info($op, &$arg1, $arg2) {
   global $user;
-
   switch ($op) {
     case 'view':
 	case 'customer':
@@ -250,10 +279,6 @@ function chycme_pane_cheque_info($op, &$arg1, $arg2) {
       return TRUE;
 
     case 'review':
-      $review[] = array('title' => t('Address'), 'data' => uc_order_address($arg1, 'cheque_info', FALSE));
-      if (uc_address_field_enabled('cliente_desde') && !empty($arg1->cheque_info_cliente_desde)) {
-        $review[] = array('title' => t('Phone'), 'data' => check_plain($arg1->cheque_info_cliente_desde));
-      }
       return $review;
   }
 }
