@@ -24,6 +24,9 @@
 					<?php print $header; ?>
 				</header>
 			</div>
+			<div class="banner-wrap">
+				<div id="banner"></div>
+			</div>
 			<div class="content-wrap">
 				<div class="content container-box">
 					<?php if (arg(0) == 'produtos') {
@@ -71,7 +74,8 @@
 						<?php endif; ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php if (!empty($help)): print $help; endif; ?>
-						<?php if (isset($node->field_como_funciona)) { ?>
+						<?php if (isset($node->field_como_funciona) && $node->field_como_funciona[0] != '') { 
+						?>
 						<ol class='como-funciona'>
 						<?php foreach ($node->field_como_funciona as $key => $value) { 
 						?>
