@@ -1802,6 +1802,22 @@ width: 28px;
 cursor:pointer;
 }
 
+body.page-produtos #center .logout,
+body.page-catalog #center .logout {
+background: url("../images/sprite.png") repeat scroll 115px -499px rgba(0, 0, 0, 0);
+bottom: 35px;
+display: block;
+font-size: 15px;
+height: 28px;
+position: relative;
+right: 35px;
+width: 184px;
+float:right;
+cursor:pointer;
+margin: -32px 0 0 0;
+padding: 4px 0 0 0;
+}
+
 body.page-node.node-type-product #center > #content-content {
 margin: 0 auto;
 padding: 0 0 0 33px;

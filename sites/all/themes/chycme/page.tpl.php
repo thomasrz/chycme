@@ -65,13 +65,15 @@
 					<?php endif; ?>
 					
 					<div id="center">					  
-						<?php if ($title && arg(0) != 'produtos' && arg(0) != 'catalog'): ?>
+						<?php if ($title && arg(0) != 'produtos' && arg(0) != 'catalog'){ ?>
               <div class="title">
                 <div class="beforeTitle"></div>
                   <h2><?php print $title; ?></h2>
                 <div class="afterTitle"></div>
               </div>
-						<?php endif; ?>
+						<?php } else { ?>
+						  <div><a href="<?php print url('logout'); ?>" class='logout'>Sair da Compra </a></div>
+						<?php }  ?>
 						<?php if ($show_messages && $messages): print $messages; endif; ?>
 						<?php if (!empty($help)): print $help; endif; ?>
 						<?php if (isset($node->field_como_funciona) && $node->field_como_funciona[0] != '') { 
