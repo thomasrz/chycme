@@ -1805,16 +1805,15 @@ cursor:pointer;
 body.page-produtos #center .logout,
 body.page-catalog #center .logout {
 background: url("../images/sprite.png") repeat scroll 115px -499px rgba(0, 0, 0, 0);
-bottom: 35px;
+bottom: -45px;
 display: block;
 font-size: 15px;
 height: 28px;
-position: relative;
+position: absolute;
 right: 35px;
 width: 184px;
 float:right;
 cursor:pointer;
-margin: -32px 0 0 0;
 padding: 4px 0 0 0;
 }
 
