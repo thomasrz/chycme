@@ -6,5 +6,5 @@
  */
 ?>
 <div id="cart-block-contents-ajax" class="cart-empty">
-  <?php print t('No products in cart');?>
+  <?php print t('Sem produtos no carrinho');?>
 </div>
