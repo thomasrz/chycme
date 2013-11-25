@@ -11,10 +11,10 @@ function create_new_role($role_name) {
 }
 
 function chycme_init() {
-  //global $user;
-  //if ($user->uid && !(in_array('administrador', $user->roles) || $user->uid == 1) && arg(0) == 'user') {
-  //  drupal_goto('produtos');
-  //}
+  global $user;
+  if ($user->uid && !(in_array('administrador', $user->roles) || $user->uid == 1) && arg(0) == 'user') {
+    drupal_goto('produtos');
+  }
   /*
   print_r($_SESSION);
   if ($_GET['q'] == 'cart/checkout/review') {
@@ -25,6 +25,17 @@ function chycme_init() {
   }
   */
 }
+function chycme_menu() {
+  $items['admin/get_cheque_info'] = array(
+    'title' => 'Informações do cheque',
+    'page callback' => 'chycme_get_cheque_info',
+    'access arguments' => array('administrador'),
+    'file' => 'chycme.ajax.inc',
+    'type' => MENU_CALLBACK
+  );
+  return $items;
+}  
+
 /*
   Data: 19 de Outubro de 2013
   Obs: Thomaz, tive que comentar a hook abaixo, pois estava dando problemas.
