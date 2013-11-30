@@ -1663,6 +1663,34 @@ width: 240px;
 overflow:hidden;
 }
 
+body.page-produtos #center .views-field-field-outras-imagens-fid,
+body.page-catalog #center .views-field-field-outras-imagens-fid,
+body.page-produtos #center .views-field-field-outras-imagens2-fid,
+body.page-catalog #center .views-field-field-outras-imagens2-fid {
+border: 1px solid #E4E4E4;
+display: block;
+float: left;
+height: 120px;
+margin: 10px 8px 0 0;
+padding: 5px;
+width: 120px;
+overflow:hidden;
+clear:both;
+}
+
+body.page-produtos #center .views-field-field-outras-imagens2-fid,
+body.page-catalog #center .views-field-field-outras-imagens2-fid {
+  clear:none;
+}
+
+body.page-produtos #center .views-field-field-outras-imagens-fid img,
+body.page-catalog #center .views-field-field-outras-imagens-fid img,
+body.page-produtos #center .views-field-field-outras-imagens2-fid img,
+body.page-catalog #center .views-field-field-outras-imagens2-fid img {
+width:100%;
+height:auto;
+}
+
 body.page-produtos #center .view-produtos .product-box .views-field-field-image-cache-fid-1 img,
 body.page-catalog #center .view-produtos .product-box .views-field-field-image-cache-fid-1 img {
 width:100%;
@@ -2750,6 +2778,10 @@ padding: 30px 115px 0 20px;
 text-align: center;
 }
 
+.como-funciona-image img{
+ margin: 18px 0 0 18px;
+}
+
 body.page-title-class-quem-somos #center > .title > .beforeTitle, body.page-title-class-contato #center > .title > .beforeTitle, body.page-title-class-como-funciona #center > .title > .beforeTitle {
 border-bottom: 1px solid #e4e4e4;
 display: block;
@@ -2790,7 +2822,7 @@ width: 114px;
 body.page-title-class-como-funciona .como-funciona > li > .como-funciona-description {
 height: 33px;
 line-height: 17px;
-margin: 32px 0;
+margin: 40px 0;
 overflow: hidden;
 position: absolute;
 right: 0;

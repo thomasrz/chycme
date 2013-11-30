@@ -82,7 +82,7 @@
 						<?php foreach ($node->field_como_funciona as $key => $value) { 
 						?>
 						  <li>
-						    <div class='como-funciona-image'><img src="<?php print '/'. $value['filepath']; ?>" alt="<?php print $value['data']['alt']; ?>" /></div>
+						    <div class='como-funciona-image'><img src="<?php print $value['filepath']; ?>" alt="<?php print $value['data']['alt']; ?>" /></div>
 						    <div class='como-funciona-description'><?php print $value['data']['description']; ?></div>						
 						  </li>
 						<?php } ?>

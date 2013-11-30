@@ -34,9 +34,9 @@ while ($produtos = db_fetch_array($query)) {
 								}
 								print $url; ?>" class="product-box product-<?php print $product_node->nid; ?>">
 	  <div>
-		<div class='product-image'><img src="<?php print '/'. $product_node->field_image_cache[0]['filepath']; ?>"></img></div>
+		<div class='product-image'><img src="<?php print $product_node->field_image_cache[0]['filepath']; ?>"></img></div>
 		<div class='product-title'><?php print $product_node->title; ?></div>
-		<div class='product-price'><?php print uc_price($product_node->sell_price); ?></div>
+		<div class='product-price'><?php //print uc_price($product_node->sell_price); ?></div>
 	  </div>
   </a>
   <?php

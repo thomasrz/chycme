@@ -1,4 +1,4 @@
-<?php
+﻿<?php
  /**
   * This template is used to print a single field in a view. It is not
   * actually used in default Views, as this is registered as a theme
@@ -26,3 +26,14 @@ print '</pre>'; */
 print "<img width='45px' height='45px' src='". $output ."'></img>";
 //print $output; 
 ?>
+<script language="javascript">
+  $(document).ready(function(){
+    jQuery('.pager-previous a').click(function(){
+      jQuery('.field-content p').html('Carregando depoimento anterior...');
+    });
+
+    jQuery('.pager-next a').click(function(){
+      jQuery('.field-content p').html('Carregando próximo depoimento...');
+    });
+  });
+</script>

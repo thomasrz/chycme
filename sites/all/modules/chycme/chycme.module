@@ -33,6 +33,14 @@ function chycme_menu() {
     'file' => 'chycme.ajax.inc',
     'type' => MENU_CALLBACK
   );
+  $items['admin/config_geral'] = array(
+    'title' => 'Configurações',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('chycme_config_geral_settings_form'),
+    'access arguments' => array('administrador'),    
+    'file' => 'inc/chycme_config_geral.inc',
+    'type' => MENU_CALLBACK,
+  );
   return $items;
 }  
 
