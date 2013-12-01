@@ -15,6 +15,7 @@ function chycme_init() {
   if ($user->uid && !(in_array('administrador', $user->roles) || $user->uid == 1) && arg(0) == 'user') {
     drupal_goto('produtos');
   }
+  drupal_add_js(drupal_get_path('module', 'chycme') . '/js/admin_script.js');
   /*
   print_r($_SESSION);
   if ($_GET['q'] == 'cart/checkout/review') {
@@ -30,7 +31,7 @@ function chycme_menu() {
     'title' => 'Informações do cheque',
     'page callback' => 'chycme_get_cheque_info',
     'access arguments' => array('administrador'),
-    'file' => 'chycme.ajax.inc',
+    'file' => 'inc/chycme.ajax.inc',
     'type' => MENU_CALLBACK
   );
   $items['admin/config_geral'] = array(
