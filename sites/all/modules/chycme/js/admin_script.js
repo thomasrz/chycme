@@ -1,9 +1,9 @@
 ﻿$(document).ready(function(){
   function chycme_get_check_info() {
     $.ajax({
-        url : 'admin/get_cheque_info',
+        url : '?q=admin/get_cheque_info',
         data : {
-            "order_id": $('.with-tabs').html().replace('Pedido ', '')
+            "order_id": $('.with-tabs').html().replace('Pedido ', ''),
         },    
         async: true,
         cache: false,
