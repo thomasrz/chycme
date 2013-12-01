@@ -242,38 +242,5 @@ $(document).ready(function(){
     var number = parseInt(selectorEle.val(),10);
     selectorEle.val(number+1);
   });
-  /*
-  function jnj_find_optician_get_state_values(url, order_id) {
-    $.ajax({
-        url : url,
-        data : {
-            "order_id": order_id
-        },    
-        async: true,
-        cache: false,
-        timeout: 30000,
-        success : function (data) {
-            data = Drupal.parseJson(data);
-            $("#jnj_find_optician_state").append(
-              $('<option></option>').val('0').html(label_select)
-            );
-            
-            $.each(data.options, function(val, text) {
-              if (val != ""){
-                $("#jnj_find_optician_state").append(
-                  $('<option></option>').val(val).html(text));
-              }
-              var width_div_state = $("#jnj_find_optician_state-wrapper select").width() + $("#jnj_find_optician_state-wrapper label").width() + 20;
-              $("#jnj_find_optician_state-wrapper").width(width_div_state);
-            });
-            return true;
-        },
-        type : "POST",
-        error : function(){
-          //console.log('Fail:' + data.status);
-          return true;
-            //popup_message(Drupal.t("An error occured."));
-        }
-    });
-	*/
+
 });
